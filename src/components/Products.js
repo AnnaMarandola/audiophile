@@ -10,23 +10,50 @@ const styles = (theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "flex-end",
-    width: "80%",
-    margin: "10rem 10%",
+    width: "90%",
+    margin: "5rem 5%",
+    flexDirection: "column",
+    [theme.breakpoints.up("sm")]: {
+      flexDirection: "row",
+      width: "80%",
+      margin: "10rem 10%",
+  
+    },
   },
-  product: {
-  },
+  product: {},
   productCard: {
     backgroundColor: theme.palette.background.paper,
-    minHeight: "14rem",
+    minHeight: "10rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
     alignItems: "center",
     paddingBottom: "2rem",
     borderRadius: "10px",
+    margin: "4rem 0",
+    [theme.breakpoints.up("sm")]: {
+      margin: "0 1rem"    
+    },
+    [theme.breakpoints.up("lg")]: {
+      paddingBottom: "2rem",
+      minHeight: "16rem",
+
+    }
+
   },
   productImage: {
-    marginBottom: "-15rem",
+    width: "80%",
+    paddingLeft: "10%",
+    marginBottom: "-12rem",
+    [theme.breakpoints.up("sm")]: {
+      marginBottom: "-7rem"
+    },
+    [theme.breakpoints.up("lg")]: {
+      marginBottom: "-15rem",
+      paddingLeft: 0,
+      width: "100%",
+
+    }
   },
   productName: {
     padding: "1rem",
@@ -60,7 +87,7 @@ const Products = ({ classes }) => {
             <Typography variant="h5" className={classes.productName}>
               {product.name}
             </Typography>
-            <Typography className={classes.thirdLevelBtn}>
+            <Typography className={classes.thirdLevelBtn} variant="h5">
               shop <img src={ARROW} alt="right arrow" />
             </Typography>
           </div>

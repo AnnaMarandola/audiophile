@@ -139,7 +139,6 @@ const theme = createTheme({
       fontFamily: manrope,
       fontSize: "1rem",
       fontWeight: 500,
-      color: "#f1f1f1",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },

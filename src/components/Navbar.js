@@ -30,7 +30,6 @@ const styles = (theme) => ({
     [theme.breakpoints.up("sm")]: {
       marginLeft: "-70%",
       width: "20%",
-
     },
     [theme.breakpoints.up("lg")]: {
       width: "auto",

@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./index.css";
 
@@ -25,9 +25,8 @@ const theme = createTheme({
     },
   },
   typography: {
-  
     h1: {
-      fontFamily: manrope ,
+      fontFamily: manrope,
       // lineHeight: 1.38,
       fontSize: "2rem",
       fontWeight: 700,
@@ -35,10 +34,10 @@ const theme = createTheme({
         fontSize: "2.25rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "2.5rem",
+        fontSize: "4rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "2.75rem",
+        fontSize: "4rem",
       },
       "@media (min-width:1500px)": {
         fontSize: "4rem",
@@ -85,18 +84,19 @@ const theme = createTheme({
       fontSize: "1.2rem",
       fontWeight: 200,
       fontFamily: manrope,
+      letterSpacing: "2px",
 
       "@media (min-width:600px)": {
         fontSize: "1.2rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1.2rem",
+        fontSize: "2rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "1.2rem",
+        fontSize: "2rem",
       },
       "@media (min-width:1500px)": {
-        fontSize: "1.5rem",
+        fontSize: "2rem",
       },
     },
     h5: {
@@ -139,14 +139,15 @@ const theme = createTheme({
       fontFamily: manrope,
       fontSize: "1rem",
       fontWeight: 500,
+      color: "#f1f1f1",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1.rem",
+        fontSize: "1.2rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "1rem",
+        fontSize: "1.2rem",
       },
       "@media (min-width:1500px)": {
         fontSize: "1.2rem",

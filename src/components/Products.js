@@ -1,0 +1,73 @@
+import { withStyles } from "@mui/styles";
+import HEADPHONES from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
+import SPEAKERS from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
+import EARPHONES from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
+import { Typography } from "@mui/material";
+import ARROW from "../assets/shared/desktop/icon-arrow-right.svg";
+
+const styles = (theme) => ({
+  root: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+    width: "80%",
+    margin: "10rem 10%",
+  },
+  product: {
+  },
+  productCard: {
+    backgroundColor: theme.palette.background.paper,
+    minHeight: "14rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    paddingBottom: "2rem",
+    borderRadius: "10px",
+  },
+  productImage: {
+    marginBottom: "-15rem",
+  },
+  productName: {
+    padding: "1rem",
+  },
+  thirdLevelBtn: {
+    margin: "2rem",
+    color: "grey",
+    "&:hover": {
+      color: theme.palette.primary.orange,
+    },
+  },
+});
+
+const products = [
+  { name: "Headphones", url: "", image: HEADPHONES },
+  { name: "Speakers", url: "", image: SPEAKERS },
+  { name: "Earphones", url: "", image: EARPHONES },
+];
+
+const Products = ({ classes }) => {
+  return (
+    <div className={classes.root}>
+      {products.map((product, id) => (
+        <div className={classes.product} key={id}>
+          <img
+            src={product.image}
+            alt={product.name}
+            className={classes.productImage}
+          />
+          <div className={classes.productCard}>
+            <Typography variant="h5" className={classes.productName}>
+              {product.name}
+            </Typography>
+            <Typography className={classes.thirdLevelBtn}>
+              shop <img src={ARROW} alt="right arrow" />
+            </Typography>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default withStyles(styles)(Products);

@@ -35,26 +35,47 @@ const styles = (theme) => ({
     flexDirection: "column",
     backgroundColor: theme.palette.primary.orange,
     borderRadius: "10px",
-    [theme.breakpoints.up("sm")]: {},
+    [theme.breakpoints.up("sm")]: {
+      paddingBottom: "2rem",
+      margin: "2rem 0"
+    },
     [theme.breakpoints.up("lg")]: {
-      paddingTop: "10rem",
-      height: "35rem",
+      backgroundSize: "contain",
+      flexDirection: "row",
+      paddingTop: "8rem",
+      height: "30rem",
+      backgroundPosition: "top  left 10%",
+      justifyContent: "space-around",
+      overflow: "hidden"
     },
   },
   zx9Img: {
     padding: "4rem 5rem 0rem 5rem",
-    [theme.breakpoints.up("sm")]: {},
-    [theme.breakpoints.up("lg")]: {},
+    [theme.breakpoints.up("sm")]: {
+      margin: "0 10rem 2rem 10rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      padding: 0,
+      margin: "0 2rem -3rem 0rem",
+      width: "25%",
+    },
   },
-  textContainerBlack: {
+  textContainer: {
     color: "white",
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     padding: "3rem 1.5rem",
-    [theme.breakpoints.up("sm")]: {},
-    [theme.breakpoints.up("lg")]: {},
+    [theme.breakpoints.up("sm")]: {
+      padding: "3rem 15rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      padding: 0,
+      alignItems: "flex-start",
+      width: "30%",
+      textAlign: "left",
+    },
   },
   title: {
     textTransform: "uppercase",
@@ -82,6 +103,9 @@ const styles = (theme) => ({
       },
     },
   },
+
+
+
   zx7Speaker: {
     height: "15rem",
     backgroundImage: `url(${ZX7M})`,
@@ -95,9 +119,21 @@ const styles = (theme) => ({
     padding: "2rem",
     [theme.breakpoints.up("sm")]: {
       backgroundImage: `url(${ZX7T})`,
+      height: "20rem",
+      padding: "4rem",
+      marginBottom: "3rem"
     },
     [theme.breakpoints.up("lg")]: {
       backgroundImage: `url(${ZX7})`,
+    },
+  },
+  yx1Earphone: {
+    display: "flex",
+    flexDirection: "column",
+    [theme.breakpoints.up("sm")]: {
+      flexDirection: "row",
+    },
+    [theme.breakpoints.up("lg")]: {
     },
   },
   yx1Img: {
@@ -109,6 +145,9 @@ const styles = (theme) => ({
     borderRadius: "10px",
     [theme.breakpoints.up("sm")]: {
       backgroundImage: `url(${YX1T})`,
+      width: "50%",
+      height: "25rem",
+      marginRight: "2rem"
     },
     [theme.breakpoints.up("lg")]: {
       backgroundImage: `url(${YX1})`,
@@ -123,7 +162,15 @@ const styles = (theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-  }
+    [theme.breakpoints.up("sm")]: {
+      width: "50%",
+      height: "21rem",
+      margin: 0,
+    },
+    [theme.breakpoints.up("lg")]: {
+    },
+
+  },
 });
 
 const ProductBooster = ({ classes }) => {
@@ -136,7 +183,7 @@ const ProductBooster = ({ classes }) => {
           alt="zx9 speaker"
           className={classes.zx9Img}
         />
-        <div className={classes.textContainerBlack}>
+        <div className={classes.textContainer}>
           <Typography variant="h1" className={classes.title}>
             zx9
           </Typography>
@@ -152,8 +199,8 @@ const ProductBooster = ({ classes }) => {
       </div>
 
       <div className={classes.zx7Speaker}>
-        <div className={classes.textContainerWhite}>
-          <Typography variant="h1" className={classes.title}>
+        <div>
+          <Typography variant="h2" className={classes.title}>
             zx7 speaker
           </Typography>
           <button className={classes.secondLevelBtn}>see product</button>
@@ -163,14 +210,15 @@ const ProductBooster = ({ classes }) => {
       <div className={classes.yx1Earphone}>
         <div className={classes.yx1Img} />
         <div className={classes.yx1TextContainer}>
-        <div>
-          <Typography variant="h1" className={classes.title}>
-            yx1 earphones
-          </Typography>
-          <button className={classes.secondLevelBtn}>see product</button>
+          <div>
+            <Typography variant="h2" className={classes.title}>
+              yx1 earphones
+            </Typography>
+            <button className={classes.secondLevelBtn}>see product</button>
           </div>
         </div>
       </div>
+
     </div>
   );
 };

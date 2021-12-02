@@ -45,17 +45,18 @@ const theme = createTheme({
     },
     h2: {
       fontFamily: manrope,
-      lineHeight: 1.38,
-      fontSize: "2rem",
+      // lineHeight: 1.38,
+      fontSize: "1.8rem",
       fontWeight: 700,
+      textTransform: "uppercase",
       "@media (min-width:600px)": {
-        fontSize: "2.25rem",
+        fontSize: "1.8rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "2.5rem",
+        fontSize: "3rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "2.75rem",
+        fontSize: "3rem",
       },
       "@media (min-width:1500px)": {
         fontSize: "3rem",
@@ -63,8 +64,9 @@ const theme = createTheme({
     },
 
     h4: {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       fontFamily: manrope,
+      fontWeight: 700,
 
       "@media (min-width:600px)": {
         fontSize: "1.2rem",
@@ -73,11 +75,10 @@ const theme = createTheme({
         fontSize: "1.2rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "1.2rem",
+        fontSize: "1.5rem",
       },
       "@media (min-width:1500px)": {
-        fontSize: "1.2rem",
-        fontWeight: 500,
+        fontSize: "1.8rem",
       },
     },
     h3: {
@@ -140,7 +141,7 @@ const theme = createTheme({
       fontSize: "1rem",
       fontWeight: 500,
       "@media (min-width:600px)": {
-        fontSize: "1rem",
+        fontSize: "1.2rem",
       },
       "@media (min-width:900px)": {
         fontSize: "1.2rem",
@@ -149,7 +150,7 @@ const theme = createTheme({
         fontSize: "1.2rem",
       },
       "@media (min-width:1500px)": {
-        fontSize: "1.2rem",
+        fontSize: "1.3rem",
       },
     },
     body2: {
@@ -160,10 +161,10 @@ const theme = createTheme({
         fontSize: "1rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1rem",
+        fontSize: "1.2rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "1rem",
+        fontSize: "1.2rem",
       },
       "@media (min-width:1500px)": {
         fontSize: "1.2rem",

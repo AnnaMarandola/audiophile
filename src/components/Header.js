@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import BGD from "../assets/home/desktop/image-hero.jpg";
 import BGM from "../assets/home/mobile/image-header.jpg";
 import BGT from "../assets/home/tablet/image-header.jpg";
+
 const styles = (theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,

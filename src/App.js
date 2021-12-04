@@ -1,20 +1,19 @@
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import ProductBooster from "./components/ProductBooster";
-import Products from "./components/Products";
-import Testimonial from "./components/Testimonial";
+import CategoryPage from "./pages/CategoryPage";
+import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Header />
-      <Products />
-      <ProductBooster />
-      <Testimonial />
-      <Footer />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/:category" component={CategoryPage} />
+          <Route exact path="/:category/:produit" component={ProductPage} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

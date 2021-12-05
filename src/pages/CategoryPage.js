@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Testimonial from "../components/Testimonial";
 import CategoriesNav from "../components/CategoriesNav";
-import Products from "../components/Products";
 import productsData from "../productsData.json";
+import ProductsPreview from "../components/ProductsPreview";
 
 const styles = (theme) => ({});
 
@@ -21,7 +21,7 @@ const CategoryPage = ({ classes, match }) => {
     <div className={classes.root}>
       <Navbar />
       <CategoryHeader category={category} />
-      <Products category={category} products={products} />
+      <ProductsPreview category={category} products={products} />
       <CategoriesNav />
       <Testimonial />
       <Footer />

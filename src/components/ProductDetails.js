@@ -1,7 +1,5 @@
-import { Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
-import { Link } from "react-router-dom";
-import productsData from "../productsData";
+import { Typography } from "@mui/material";
 
 const styles = (theme) => ({
   root: {
@@ -90,46 +88,31 @@ const styles = (theme) => ({
   },
 });
 
-// to do:
-
-const Products = ({ classes, category, match }) => {
-
-  const categoryData = productsData.find(
-    (products) => products.category === category
-  );
-  const products = categoryData.products;
-
+const ProductDetails = ({ classes, product }) => {
   return (
     <div className={classes.root}>
-      {products.map((product, id) => (
-        <div className={classes.productContainer} key={id}>
-          <div
-            className={classes.imgContainer}
-            style={{ backgroundImage: `url(${product.categoryImage})` }}
-          />
-          <div className={classes.descriptionContainer}>
-            {product.new && (
-              <Typography variant="h6" className={classes.new}>
-                New product
-              </Typography>
-            )}
-            <Typography variant="h2" className={classes.name}>
-              {product.name}
+      <div className={classes.productContainer}>
+        <div
+          className={classes.imgContainer}
+          style={{ backgroundImage: `url(${product.categoryImage})` }}
+        />
+        <div className={classes.descriptionContainer}>
+          {product.new && (
+            <Typography variant="h6" className={classes.new}>
+              New product
             </Typography>
-            <Typography variant="body2" className={classes.description}>
-              {product.description}
-            </Typography>
-            <Link
-              to={`/:${category}/:${product.slug}`}
-              className={classes.link}
-            >
-              <button className={classes.CTAButton}>see product</button>
-            </Link>
-          </div>
+          )}
+          <Typography variant="h2" className={classes.name}>
+            {product.name}
+          </Typography>
+          <Typography variant="body2" className={classes.description}>
+            {product.description}
+          </Typography>
+          <button className={classes.CTAButton}>see product</button>
         </div>
-      ))}
+      </div>
     </div>
   );
 };
 
-export default withStyles(styles)(Products);
+export default withStyles(styles)(ProductDetails);

@@ -60,7 +60,6 @@ const styles = (theme) => ({
     color: theme.palette.primary.orange,
   },
   text: {
-    color: "grey",
     [theme.breakpoints.up("lg")]: {
         width: "70%",
         padding: "2rem 0",

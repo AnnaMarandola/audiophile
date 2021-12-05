@@ -21,7 +21,7 @@ const productsData = [
         },
         category: "headphones",
         new: true,
-        price: 2999,
+        price: "2,999",
         description:
           "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
         features:
@@ -92,7 +92,7 @@ const productsData = [
         },
         category: "headphones",
         new: false,
-        price: 1750,
+        price: "1,750",
         description:
           "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
         features:
@@ -154,7 +154,7 @@ const productsData = [
           tablet: "./assets/product-xx59-headphones/tablet/image-product.jpg",
           desktop: "./assets/product-xx59-headphones/desktop/image-product.jpg",
         },
-        price: 899,
+        price: "8,99",
         description:
           "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
         features:

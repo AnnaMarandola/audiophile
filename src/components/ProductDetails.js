@@ -1,5 +1,7 @@
 import { withStyles } from "@mui/styles";
 import { Typography } from "@mui/material";
+import Features from "./Features";
+import InTheBox from "./InTheBox";
 
 const styles = (theme) => ({
   root: {
@@ -12,7 +14,7 @@ const styles = (theme) => ({
     },
     [theme.breakpoints.up("lg")]: {},
   },
-  productContainer: {
+  imgAndDescrpition: {
     width: "90%",
     padding: "3rem 0",
     display: "flex",
@@ -79,19 +81,31 @@ const styles = (theme) => ({
     textTransform: "uppercase",
     fontSize: "1rem",
     padding: "1rem 2.5rem",
-    marginTop: "1.5rem",
     border: "none",
     "&:hover": {
       backgroundColor: theme.palette.primary.pink,
       color: theme.palette.background.default,
     },
   },
+  counter: {
+    display: "flex",
+    backgroundColor: theme.palette.background.paper,
+    margin: "2rem 0",
+    width: "fit-content",
+  },
+  counterBtn: {
+    padding: "1rem",
+    border: "none",
+  },
+  count: {
+    padding: " 1rem 2rem",
+  },
 });
 
 const ProductDetails = ({ classes, product }) => {
   return (
     <div className={classes.root}>
-      <div className={classes.productContainer}>
+      <div className={classes.imgAndDescrpition}>
         <div
           className={classes.imgContainer}
           style={{ backgroundImage: `url(${product.categoryImage})` }}
@@ -108,8 +122,22 @@ const ProductDetails = ({ classes, product }) => {
           <Typography variant="body2" className={classes.description}>
             {product.description}
           </Typography>
-          <button className={classes.CTAButton}>see product</button>
+          <Typography variant="h6">$ {product.price}</Typography>
+          <div className={classes.btns}>
+            <div className={classes.counter}>
+              <button className={classes.counterBtn}>-</button>
+              <Typography className={classes.count} variant="h6">
+                1
+              </Typography>
+              <button className={classes.counterBtn}>+</button>
+            </div>
+            <button className={classes.CTAButton}>add to cart</button>
+          </div>
         </div>
+      </div>
+      <div className={classes.featuresAndBox}>
+        <Features features={product.features} />
+        <InTheBox includes={product.includes}/>
       </div>
     </div>
   );

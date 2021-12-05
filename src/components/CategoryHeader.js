@@ -1,16 +1,18 @@
-import { Typography } from "@material-ui/core";
+import { Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.dark,
     height: "20rem",
+    width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
   title: {
     color: "white",
+    textTransform: "uppercase",
   },
 });
 

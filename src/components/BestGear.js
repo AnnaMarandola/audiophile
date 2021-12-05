@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import PORTRAITM from "../assets/shared/mobile/image-best-gear.jpg";
 import PORTRAITD from "../assets/shared/desktop/image-best-gear.jpg";
@@ -52,7 +52,7 @@ const styles = (theme) => ({
     textTransform: "uppercase",
     paddingBottom: "1rem",
     [theme.breakpoints.up("lg")]: {
-        width: "50%",
+        width: "70%",
         padding: "2rem 0"
     },
   },
@@ -63,19 +63,19 @@ const styles = (theme) => ({
     color: "grey",
     [theme.breakpoints.up("lg")]: {
         width: "70%",
+        padding: "2rem 0",
     },
-
   },
 });
 
-const Testimonial = ({ classes }) => {
+const BestGear = ({ classes }) => {
   return (
     <div className={classes.root}>
       <div className={classes.photoGuy} />
       <div className={classes.textContainer}>
-        <Typography variant="h4" className={classes.title}>
+        <Typography variant="h2" className={classes.title}>
           Bringing you the
-          <span variant="h4" className={classes.titleSpan}> best </span>
+          <span variant="h2" className={classes.titleSpan}> best </span>
           audio gear
         </Typography>
         <Typography variant="body1" className={classes.text}>
@@ -91,4 +91,4 @@ const Testimonial = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(Testimonial);
+export default withStyles(styles)(BestGear);

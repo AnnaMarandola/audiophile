@@ -15,6 +15,7 @@ const styles = (theme) => ({
   topBar: {
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
     borderBottom: "1px solid #f1f1f1",
     width: "100%",
     padding: "1rem",
@@ -24,12 +25,9 @@ const styles = (theme) => ({
     },
   },
   logo: {
-    width: "30%",
     height: "auto",
-    marginLeft: "-2rem",
+    marginLeft: "-1rem",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: "-70%",
-      width: "20%",
     },
     [theme.breakpoints.up("lg")]: {
       width: "auto",
@@ -59,6 +57,9 @@ const styles = (theme) => ({
   link: {
     textDecoration: "none",
   },
+  cartIcon: {
+    padding: "0.4rem"
+  }
 });
 
 const Navbar = ({ classes }) => {
@@ -93,7 +94,7 @@ const Navbar = ({ classes }) => {
             </Typography>
           </Link>
         </div>
-        <img className={classes.artIcon} src={CART} alt="cart icons" />
+        <img className={classes.cartIcon} src={CART} alt="cart icons" />
       </nav>
     </div>
   );

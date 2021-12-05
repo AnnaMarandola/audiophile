@@ -62,9 +62,8 @@ const styles = (theme) => ({
   ctaButton: {
     backgroundColor: theme.palette.primary.orange,
     color: "white",
-    fontSize: "1.3rem",
-    padding: "1rem 2.5rem",
-    marginTop: "3rem",
+    fontSize: "1rem",
+    padding: "1rem 2rem",
     border: "none",
     "&:hover": {
       backgroundColor: theme.palette.primary.pink,

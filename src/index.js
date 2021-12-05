@@ -83,7 +83,7 @@ const theme = createTheme({
     },
     h3: {
       fontSize: "1.2rem",
-      fontWeight: 200,
+      fontWeight: 600,
       fontFamily: manrope,
       letterSpacing: "2px",
 
@@ -122,7 +122,7 @@ const theme = createTheme({
       fontSize: "1rem",
       fontWeight: 500,
       fontFamily: manrope,
-
+      letterSpacing: 10,
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
@@ -157,6 +157,7 @@ const theme = createTheme({
       fontFamily: manrope,
       fontSize: "1rem",
       fontWeight: 600,
+      color: "grey",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
@@ -167,7 +168,7 @@ const theme = createTheme({
         fontSize: "1.2rem",
       },
       "@media (min-width:1500px)": {
-        fontSize: "1.2rem",
+        fontSize: "1.3rem",
       },
     },
   },

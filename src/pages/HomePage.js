@@ -1,21 +1,27 @@
+import { withStyles } from "@mui/styles";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import CategoriesNav from "../components/CategoriesNav";
 import ProductBooster from "../components/ProductBooster";
-import Testimonial from "../components/Testimonial";
+import BestGear from "../components/BestGear";
 
-const HomePage = () => {
+const styles = (theme) => ({
+  root: {
+    width: "100%"
+  }
+})
+const HomePage = ({classes}) => {
   return (
-    <div>
+    <div className={classes.root}>
       <Navbar />
       <Header />
       <CategoriesNav />
       <ProductBooster />
-      <Testimonial />
+      <BestGear/>
       <Footer />
     </div>
   );
 };
 
-export default HomePage;
+export default withStyles(styles)(HomePage);

@@ -2,10 +2,10 @@ import { withStyles } from "@mui/styles";
 import CategoryHeader from "../components/CategoryHeader";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Testimonial from "../components/Testimonial";
 import CategoriesNav from "../components/CategoriesNav";
-import productsData from "../productsData.json";
+import productsData from "../productsData.js";
 import ProductsPreview from "../components/ProductsPreview";
+import BestGear from "../components/BestGear";
 
 const styles = (theme) => ({});
 
@@ -23,7 +23,7 @@ const CategoryPage = ({ classes, match }) => {
       <CategoryHeader category={category} />
       <ProductsPreview category={category} products={products} />
       <CategoriesNav />
-      <Testimonial />
+      <BestGear/>
       <Footer />
     </div>
   );

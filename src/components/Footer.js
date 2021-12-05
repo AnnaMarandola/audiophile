@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import LOGO from "../assets/shared/desktop/logo.svg";
 import FACEBOOK from "../assets/shared/desktop/icon-facebook.svg";

@@ -3,7 +3,8 @@ import { withStyles } from "@material-ui/styles";
 import CategoriesNav from "../components/CategoriesNav";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Testimonial from "../components/Testimonial";
+import Testimonial from "../components/BestGear";
+import BestGear from "../components/BestGear";
 
 // to do :
 //récupérer le produit dans les params d'url
@@ -12,7 +13,6 @@ import Testimonial from "../components/Testimonial";
 
 const styles = (theme) => ({});
 
-
 const ProductPage = ({ classes, match }) => {
   let path = match.params;
   console.log("category product page", path);
@@ -20,9 +20,11 @@ const ProductPage = ({ classes, match }) => {
   return (
     <div className={classes.root}>
       <Navbar />
-      <Typography>{path.category} {path.produit}</Typography>
+      <Typography>
+        {path.category} {path.produit}
+      </Typography>
       <CategoriesNav />
-      <Testimonial />
+      <BestGear />
       <Footer />
     </div>
   );

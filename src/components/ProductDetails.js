@@ -4,6 +4,7 @@ import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Features from "./Features";
 import InTheBox from "./InTheBox";
+import Gallery from "./Gallery";
 
 const styles = (theme) => ({
   root: {
@@ -26,10 +27,9 @@ const styles = (theme) => ({
       padding: "0",
     },
     [theme.breakpoints.up("lg")]: {
-      left: "10%", 
-      padding: 0  
+      left: "10%",
+      padding: 0,
     },
-
   },
   imgAndDescrpition: {
     width: "90%",
@@ -53,14 +53,14 @@ const styles = (theme) => ({
     backgroundPosition: "center bottom 65%",
     [theme.breakpoints.up("sm")]: {
       height: "41rem",
-      padding: "0 3rem"
+      padding: "0 3rem",
     },
     [theme.breakpoints.up("lg")]: {
       width: "40%",
       height: "44rem",
     },
     [theme.breakpoints.up("xl")]: {
-      height: "52rem"
+      height: "52rem",
     },
   },
   descriptionContainer: {
@@ -68,7 +68,7 @@ const styles = (theme) => ({
     display: "flex",
     flexDirection: "column",
     [theme.breakpoints.up("sm")]: {
-      paddingLeft: "3rem"
+      paddingLeft: "3rem",
     },
     [theme.breakpoints.up("lg")]: {
       justifyContent: "center",
@@ -79,7 +79,6 @@ const styles = (theme) => ({
   new: {
     textTransform: "uppercase",
     color: theme.palette.primary.orange,
-
   },
   name: {
     padding: "1rem 0",
@@ -99,13 +98,12 @@ const styles = (theme) => ({
     width: "90%",
     justifyContent: "space-between",
     [theme.breakpoints.up("sm")]: {
-      width: "70%"
+      width: "70%",
     },
     [theme.breakpoints.up("lg")]: {
       flexDirection: "column",
-      alignItems: "flex-start"
+      alignItems: "flex-start",
     },
-
   },
   CTAButton: {
     backgroundColor: theme.palette.primary.orange,
@@ -131,14 +129,13 @@ const styles = (theme) => ({
   counterBtn: {
     padding: "1rem",
     border: "none",
-    [theme.breakpoints.up("sm")]: {
-    }
+    [theme.breakpoints.up("sm")]: {},
   },
   count: {
     padding: "1rem 1rem",
     [theme.breakpoints.up("sm")]: {
       padding: "1rem 2rem",
-    }
+    },
   },
   featuresAndBox: {
     display: "flex",
@@ -146,14 +143,15 @@ const styles = (theme) => ({
     width: "90%",
     [theme.breakpoints.up("sm")]: {
       flexDirection: "row",
-      width: "90%"
+      width: "90%",
+      padding: "4rem 0",
     },
     [theme.breakpoints.up("lg")]: {
       flexDirection: "row",
       width: "80%",
-      justifyContent: "space-around"
+      justifyContent: "space-around",
     },
-  }
+  },
 });
 
 const ProductDetails = ({ classes, product, category }) => {
@@ -161,9 +159,7 @@ const ProductDetails = ({ classes, product, category }) => {
   return (
     <div className={classes.root}>
       <Link to={`/:${category}`} className={classes.navlink}>
-        <Typography variant="body2">
-          Go back
-        </Typography>
+        <Typography variant="body2">Go back</Typography>
       </Link>
       <div className={classes.imgAndDescrpition}>
         <div
@@ -182,7 +178,9 @@ const ProductDetails = ({ classes, product, category }) => {
           <Typography variant="body2" className={classes.description}>
             {product.description}
           </Typography>
-          <Typography variant="h5" className={classes.price}>$ {product.price}</Typography>
+          <Typography variant="h5" className={classes.price}>
+            $ {product.price}
+          </Typography>
           <div className={classes.btns}>
             <div className={classes.counter}>
               <button
@@ -209,6 +207,7 @@ const ProductDetails = ({ classes, product, category }) => {
         <Features features={product.features} />
         <InTheBox includes={product.includes} />
       </div>
+      <Gallery gallery={product.gallery} />
     </div>
   );
 };

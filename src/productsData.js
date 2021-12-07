@@ -1,6 +1,15 @@
 import XX59PREVIEW from "./assets/product-xx59-headphones/mobile/image-category-page-preview.jpg";
 import XX99PREVIEW from "./assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg";
 import XX992PREVIEW from "./assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg";
+import XX992GALLERY1M from "./assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg";
+import XX992GALLERY2M from "./assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg";
+import XX992GALLERY3M from "./assets/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg";
+import XX992GALLERY1T from "./assets/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg";
+import XX992GALLERY2T from "./assets/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg";
+import XX992GALLERY3T from "./assets/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg";
+import XX992GALLERY1D from "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg";
+import XX992GALLERY2D from "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg";
+import XX992GALLERY3D from "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
 
 const productsData = [
   {
@@ -50,28 +59,19 @@ const productsData = [
         ],
         gallery: {
           first: {
-            mobile:
-              "./assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg",
-            tablet:
-              "./assets/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg",
-            desktop:
-              "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg",
+            mobile: XX992GALLERY1M,
+            tablet: XX992GALLERY1T,
+            desktop: XX992GALLERY1D,
           },
           second: {
-            mobile:
-              "./assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg",
-            tablet:
-              "./assets/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg",
-            desktop:
-              "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg",
+            mobile: XX992GALLERY2M,
+            tablet: XX992GALLERY2T,
+            desktop: XX992GALLERY2D,
           },
           third: {
-            mobile:
-              "./assets/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg",
-            tablet:
-              "./assets/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg",
-            desktop:
-              "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg",
+            mobile: XX992GALLERY3M,
+            tablet: XX992GALLERY3T,
+            desktop: XX992GALLERY3D,
           },
         },
       },

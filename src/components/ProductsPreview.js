@@ -44,6 +44,9 @@ const styles = (theme) => ({
       height: "35rem",
       width: "40%",
     },
+    [theme.breakpoints.up("xl")]: {
+      height: "50rem",
+    },
   },
   descriptionContainer: {
     padding: "3rem 0",
@@ -93,7 +96,6 @@ const styles = (theme) => ({
 // to do:
 
 const Products = ({ classes, category, match }) => {
-
   const categoryData = productsData.find(
     (products) => products.category === category
   );

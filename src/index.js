@@ -83,7 +83,7 @@ const theme = createTheme({
     },
     h3: {
       fontSize: "1.2rem",
-      fontWeight: 600,
+      fontWeight: 800,
       fontFamily: manrope,
       letterSpacing: "2px",
 
@@ -158,6 +158,7 @@ const theme = createTheme({
       fontSize: "1rem",
       fontWeight: 600,
       color: "grey",
+      lineHeight: 1.68,
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },

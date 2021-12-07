@@ -1,4 +1,4 @@
-import { withStyles } from "@material-ui/styles";
+import { withStyles } from "@mui/styles";
 import CategoriesNav from "../components/CategoriesNav";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -31,7 +31,7 @@ const ProductPage = ({ classes, match }) => {
   return (
     <div className={classes.root}>
       <Navbar />
-      <ProductDetails product={productData} />
+      <ProductDetails product={productData} category={categoryInPath}/>
       <CategoriesNav />
       <BestGear />
       <Footer />

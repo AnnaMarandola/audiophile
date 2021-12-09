@@ -10,6 +10,26 @@ import XX992GALLERY3T from "./assets/product-xx99-mark-two-headphones/tablet/ima
 import XX992GALLERY1D from "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg";
 import XX992GALLERY2D from "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg";
 import XX992GALLERY3D from "./assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
+import OTHERXX99M from "./assets/shared/mobile/image-xx99-mark-one-headphones.jpg";
+import OTHERXX99T from "./assets/shared/tablet/image-xx99-mark-one-headphones.jpg";
+import OTHERXX99D from "./assets/shared/desktop/image-xx99-mark-one-headphones.jpg";
+import OTHERXX59M from "./assets/shared/mobile/image-xx59-headphones.jpg";
+import OTHERXX59T from "./assets/shared/tablet/image-xx59-headphones.jpg";
+import OTHERXX59D from "./assets/shared/desktop/image-xx59-headphones.jpg";
+import OTHERZX9M from "./assets/shared/mobile/image-zx9-speaker.jpg";
+import OTHERZX9T from "./assets/shared/tablet/image-zx9-speaker.jpg";
+import OTHERZX9D from "./assets/shared/desktop/image-zx9-speaker.jpg";
+
+import XX99GALLERY1M from "./assets/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg";
+import XX99GALLERY2M from "./assets/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg";
+import XX99GALLERY3M from "./assets/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg";
+import XX99GALLERY1T from "./assets/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg";
+import XX99GALLERY2T from "./assets/product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg";
+import XX99GALLERY3T from "./assets/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg";
+import XX99GALLERY1D from "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg";
+import XX99GALLERY2D from "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg";
+import XX99GALLERY3D from "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg";
+
 
 const productsData = [
   {
@@ -20,14 +40,6 @@ const productsData = [
         slug: "xx99-mark-two-headphones",
         name: "XX99 Mark II Headphones",
         categoryImage: XX992PREVIEW,
-        image: {
-          mobile:
-            "./assets/product-xx99-mark-two-headphones/mobile/image-product.jpg",
-          tablet:
-            "./assets/product-xx99-mark-two-headphones/tablet/image-product.jpg",
-          desktop:
-            "./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg",
-        },
         category: "headphones",
         new: true,
         price: "2,999",
@@ -74,6 +86,39 @@ const productsData = [
             desktop: XX992GALLERY3D,
           },
         },
+        others: [
+          {
+            slug: "xx99-mark-one-headphones",
+            name: "XX99 Mark I",
+            category: "headphones",
+
+            image: {
+              mobile: OTHERXX99M,
+              tablet: OTHERXX99T,
+              desktop: OTHERXX99D,
+            },
+          },
+          {
+            slug: "xx59-headphones",
+            name: "XX59",
+            category: "headphones",
+
+            image: {
+              mobile: OTHERXX59M,
+              tablet: OTHERXX59T,
+              desktop: OTHERXX59D,
+            },
+          },
+          {
+            slug: "zx9-speaker",
+            name: "ZX9 Speaker",
+            image: {
+              mobile: OTHERZX9M,
+              tablet: OTHERZX9T,
+              desktop: OTHERZX9D,
+            },
+          },
+        ],
       },
 
       {
@@ -81,15 +126,6 @@ const productsData = [
         slug: "xx99-mark-one-headphones",
         name: "XX99 Mark I Headphones",
         categoryImage: XX99PREVIEW,
-
-        image: {
-          mobile:
-            "./assets/product-xx99-mark-one-headphones/mobile/image-product.jpg",
-          tablet:
-            "./assets/product-xx99-mark-one-headphones/tablet/image-product.jpg",
-          desktop:
-            "./assets/product-xx99-mark-one-headphones/desktop/image-product.jpg",
-        },
         category: "headphones",
         new: false,
         price: "1,750",
@@ -117,30 +153,54 @@ const productsData = [
         ],
         gallery: {
           first: {
-            mobile:
-              "./assets/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg",
-            tablet:
-              "./assets/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg",
-            desktop:
-              "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg",
+            mobile: XX99GALLERY1M,
+            tablet: XX99GALLERY1T,
+            desktop: XX99GALLERY1D,
           },
           second: {
-            mobile:
-              "./assets/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg",
-            tablet:
-              "./assets/product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg",
-            desktop:
-              "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg",
+            mobile: XX99GALLERY2M,
+            tablet: XX99GALLERY2T,
+            desktop: XX99GALLERY2D,
           },
           third: {
-            mobile:
-              "./assets/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg",
-            tablet:
-              "./assets/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg",
-            desktop:
-              "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg",
+            mobile: XX99GALLERY3M,
+            tablet: XX99GALLERY3T,
+            desktop: XX99GALLERY3D,
           },
         },
+
+        others: [
+          {
+            slug: "xx99-mark-one-headphones",
+            name: "XX99 Mark I",
+            category: "headphones",
+            image: {
+              mobile: OTHERXX99M,
+              tablet: OTHERXX99T,
+              desktop: OTHERXX99D,
+            },
+          },
+          {
+            slug: "xx59-headphones",
+            category: "headphones",
+            name: "XX59",
+            image: {
+              mobile: OTHERXX59M,
+              tablet: OTHERXX59T,
+              desktop: OTHERXX59D,
+            },
+          },
+          {
+            slug: "zx9-speaker",
+            name: "ZX9 Speaker",
+            image: {
+              mobile: OTHERZX9M,
+              tablet: OTHERZX9T,
+              desktop: OTHERZX9D,
+            },
+          },
+        ],
+
       },
       {
         id: 3,
@@ -203,6 +263,39 @@ const productsData = [
               "./assets/product-xx59-headphones/desktop/image-gallery-3.jpg",
           },
         },
+        others: [
+          {
+            slug: "xx99-mark-one-headphones",
+            name: "XX99 Mark I",
+            category: "headphones",
+            image: {
+              mobile: OTHERXX99M,
+              tablet: OTHERXX99T,
+              desktop: OTHERXX99D,
+            },
+          },
+          {
+            slug: "xx59-headphones",
+            category: "headphones",
+
+            name: "XX59",
+            image: {
+              mobile: OTHERXX59M,
+              tablet: OTHERXX59T,
+              desktop: OTHERXX59D,
+            },
+          },
+          {
+            slug: "zx9-speaker",
+            name: "ZX9 Speaker",
+            image: {
+              mobile: OTHERZX9M,
+              tablet: OTHERZX9T,
+              desktop: OTHERZX9D,
+            },
+          },
+        ],
+
       },
     ],
   },

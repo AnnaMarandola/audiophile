@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import CategoriesNav from "../components/CategoriesNav";
 import productsData from "../productsData.js";
-import ProductsPreview from "../components/ProductsPreview";
+import ProductsPreview from "../components/products/ProductsPreview";
 import BestGear from "../components/BestGear";
 
 const styles = (theme) => ({});

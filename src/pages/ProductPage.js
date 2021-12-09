@@ -3,35 +3,35 @@ import CategoriesNav from "../components/CategoriesNav";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import BestGear from "../components/BestGear";
-import ProductDetails from "../components/ProductDetails";
+import ProductDetails from "../components/products/ProductDetails";
 import productsData from "../productsData";
-
-// to do :
-//récupérer le produit dans les params d'url
-//importer productsData.json
-//import productsData from '../productsData';
-//récuper les data du produit de l'url
+import OtherProducts from "../components/products/OtherProducts";
+import { useParams } from "react-router";
 
 const styles = (theme) => ({});
 
 const ProductPage = ({ classes, match }) => {
-  const productInPath = match.params.product.substr(1);
-  const categoryInPath = match.params.category.substr(1);
   
+  const { product } = useParams();
+  const { category } = useParams();
+  const productInPath = product.substr(1);
+  const categoryInPath = category.substr(1);
+  
+
   const categoryData = productsData.find(
     (products) => products.category === categoryInPath
   );
-  console.log("categoryData", categoryData);
 
-  const products = categoryData && categoryData.products
-  console.log("products", products);
+  const products = categoryData && categoryData.products;
 
-  const productData = categoryData && products && products.find( (product) => product.slug === productInPath)
-  console.log("productData", productData)
+  const productData =
+    products.find((product) => product.slug === productInPath);
+
   return (
     <div className={classes.root}>
       <Navbar />
-      <ProductDetails product={productData} category={categoryInPath}/>
+      <ProductDetails product={productData} category={categoryInPath} />
+      <OtherProducts others={productData.others} category={categoryInPath} />
       <CategoriesNav />
       <BestGear />
       <Footer />

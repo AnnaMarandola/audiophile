@@ -11,12 +11,12 @@ import { useParams } from "react-router";
 const styles = (theme) => ({});
 
 const ProductPage = ({ classes, match }) => {
-  
+  window.scrollTo(0, 0);
+
   const { product } = useParams();
   const { category } = useParams();
   const productInPath = product.substr(1);
   const categoryInPath = category.substr(1);
-  
 
   const categoryData = productsData.find(
     (products) => products.category === categoryInPath
@@ -24,8 +24,9 @@ const ProductPage = ({ classes, match }) => {
 
   const products = categoryData && categoryData.products;
 
-  const productData =
-    products.find((product) => product.slug === productInPath);
+  const productData = products.find(
+    (product) => product.slug === productInPath
+  );
 
   return (
     <div className={classes.root}>

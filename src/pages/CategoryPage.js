@@ -10,6 +10,8 @@ import BestGear from "../components/BestGear";
 const styles = (theme) => ({});
 
 const CategoryPage = ({ classes, match }) => {
+  window.scrollTo(0, 0);
+
   let pathCategory = match.params.category;
   const category = pathCategory.substr(1);
   const categoryData = productsData.find(

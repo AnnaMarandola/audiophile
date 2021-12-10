@@ -19,6 +19,9 @@ const styles = (theme) => ({
     [theme.breakpoints.up("sm")]: {
       paddingLeft: "25%",
     },
+    [theme.breakpoints.up("lg")]: {
+      paddingLeft: 0,
+    },
 
   },
   boxContent: {

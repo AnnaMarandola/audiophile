@@ -156,6 +156,11 @@ const styles = (theme) => ({
 
 const ProductDetails = ({ classes, product, category }) => {
   const [qty, setQty] = useState(1);
+
+  const handleCart = () => {
+    localStorage.setItem(product.name, qty);
+  };
+  
   return (
     <div className={classes.root}>
       <Link to={`/:${category}`} className={classes.navlink}>
@@ -199,7 +204,9 @@ const ProductDetails = ({ classes, product, category }) => {
                 +
               </button>
             </div>
-            <button className={classes.CTAButton}>add to cart</button>
+            <button className={classes.CTAButton} onClick={handleCart}>
+              add to cart
+            </button>
           </div>
         </div>
       </div>

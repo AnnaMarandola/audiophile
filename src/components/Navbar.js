@@ -4,6 +4,8 @@ import LOGO from "../assets/shared/desktop/logo.svg";
 import CART from "../assets/shared/desktop/icon-cart.svg";
 import MobileMenu from "./MobileMenu";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import Cart from "./Cart";
 
 const styles = (theme) => ({
   root: {
@@ -27,8 +29,7 @@ const styles = (theme) => ({
   logo: {
     height: "auto",
     marginLeft: "-1rem",
-    [theme.breakpoints.up("sm")]: {
-    },
+    [theme.breakpoints.up("sm")]: {},
     [theme.breakpoints.up("lg")]: {
       width: "auto",
       marginLeft: 0,
@@ -58,11 +59,38 @@ const styles = (theme) => ({
     textDecoration: "none",
   },
   cartIcon: {
-    padding: "0.4rem"
-  }
+    padding: "0.4rem",
+  },
 });
 
 const Navbar = ({ classes }) => {
+  const [cartOpen, setcartOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  console.log("cartOpen", cartOpen);
+
+  const productList = { ...localStorage };
+  const names = Object.keys(productList)
+  const quantities = Object.values(productList)
+ const products = names.map((name, index) => {
+   return {
+     name: names[index],
+     qty: quantities[index]
+   }
+ })
+
+ console.log("formated products", products)
+
+  const handleToogle = (e) => {
+    if (!cartOpen) {
+      setcartOpen(true);
+      setAnchorEl(e.currentTarget);
+    } else {
+      setcartOpen(false);
+      setAnchorEl(null);
+    }
+  };
+
   return (
     <div className={classes.root}>
       <nav className={classes.topBar}>
@@ -94,8 +122,22 @@ const Navbar = ({ classes }) => {
             </Typography>
           </Link>
         </div>
-        <img className={classes.cartIcon} src={CART} alt="cart icons" />
+        <img
+          className={classes.cartIcon}
+          src={CART}
+          alt="cart icons"
+          onClick={handleToogle}
+        />
       </nav>
+      {cartOpen && (
+        <Cart
+          anchorEl={anchorEl}
+          isOpen={cartOpen}
+          close={handleToogle}
+          productList={products}
+          names={names}
+        />
+      )}
     </div>
   );
 };

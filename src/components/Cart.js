@@ -1,6 +1,7 @@
 import { Popover, Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import cartData from "../cartData";
+import ProductInCart from "./ProductInCart";
 
 const styles = (theme) => ({
   root: {
@@ -9,7 +10,6 @@ const styles = (theme) => ({
     color: "white",
   },
   cartContainer: {
-    // padding: "1rem"
     backgroundColor: "white",
   },
   titleSection: {
@@ -17,25 +17,7 @@ const styles = (theme) => ({
     justifyContent: "space-between",
     padding: "1rem",
   },
-  product: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "1rem",
-  },
-  itemImg: {
-    width: "20%",
-    borderRadius: "10px",
-    backgroundColor: theme.palette.background.paper,
-  },
-  texts: {
-    width: "7rem",
-  },
-  name: {},
-  price: {},
-  counter: {
-    display: "flex",
-  },
+
   total: {
     display: "flex",
     justifyContent: "space-between",
@@ -47,14 +29,26 @@ const Cart = ({ classes, anchorEl, isOpen, close, productList, names }) => {
   const data = names.map((name) =>
     cartData.find((product) => product.id === name)
   );
+
+
   const cart = data.map((product, i) => {
     return {
+      id: product.id,
       name: product.name,
       price: product.price,
       image: product.picture,
-      qty: productList[i].qty,
+      qty: productList && Number(productList[i].qty),
     };
   });
+
+
+
+  const handleDelete = () => {
+    localStorage.clear();
+    window.location.reload()
+  };
+
+
 
   console.log("cart", cart);
 
@@ -66,37 +60,18 @@ const Cart = ({ classes, anchorEl, isOpen, close, productList, names }) => {
       onClose={close}
       anchorOrigin={{
         vertical: "bottom",
-        horizontal: "left",
+        horizontal: "center",
       }}
     >
       <div className={classes.cartContainer}>
         <div className={classes.titleSection}>
           <Typography variant="body1">CART (x)</Typography>
-          <Typography variant="body2">Remove all</Typography>
+          <Typography variant="body2" onClick={handleDelete}>
+            Remove all
+          </Typography>
         </div>
-        {cart &&
-          cart.map((item, id) => (
-            <div key={id} className={classes.product}>
-              <img
-                src={item.image}
-                alt={item.name}
-                className={classes.itemImg}
-              />
-              <div className={classes.productInfo}>
-                <div className={classes.texts}>
-                  <Typography variant="body1">{item.name}</Typography>
-                  <Typography variant="body2">{item.price}</Typography>
-                </div>
-              </div>
-              <div className={classes.counter}>
-                <button>-</button>
-                <Typography>{item.qty}</Typography>
-                <button>+</button>
-              </div>
-            </div>
-          ))}
+        {cart && cart.map((item, id) => <ProductInCart item={item} key={id}/>)}
         <div className={classes.total}>
-          {" "}
           <Typography variant="body2">TOTAL</Typography>
           <Typography>$ 5,576</Typography>
         </div>

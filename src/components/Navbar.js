@@ -67,7 +67,6 @@ const Navbar = ({ classes }) => {
   const [cartOpen, setcartOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
-  console.log("cartOpen", cartOpen);
 
   const productList = { ...localStorage };
   const names = Object.keys(productList)
@@ -79,7 +78,6 @@ const Navbar = ({ classes }) => {
    }
  })
 
- console.log("formated products", products)
 
   const handleToogle = (e) => {
     if (!cartOpen) {

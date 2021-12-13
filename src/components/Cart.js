@@ -1,6 +1,6 @@
 import { Popover, Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import cartData from "../cartData";
 import ProductInCart from "./ProductInCart";
 
@@ -111,9 +111,9 @@ const Cart = ({
           <Typography variant="body2">TOTAL</Typography>
           <Typography>$ {total}</Typography>
         </div>
-        <Link to="checkout">
+        <NavLink to="/checkout">
           <button className={classes.ctaButton}>Checkout</button>
-        </Link>
+        </NavLink>
       </div>
     </Popover>
   );

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Popover, Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
@@ -59,9 +58,6 @@ const Cart = ({
   const data = names.map((name) =>
     cartData.find((product) => product.id === name)
   );
-
-  useEffect(() => {}, [totalItems]);
-
   const cart = data.map((product, i) => {
     return {
       id: product.id,
@@ -71,6 +67,19 @@ const Cart = ({
       qty: productList && Number(productList[i].qty),
     };
   });
+
+
+  let totals = cart.map((product) => {
+    return product.qty * Number(product.price.replace(",", ""));
+  });
+  console.log("totals", totals);
+
+  const reducer = (acc, curr) => acc + curr;
+  const total = totals.reduce(reducer)
+  console.log("total", total);
+
+
+  // to do : on checkout, set totals to localstorage
 
   const handleDelete = () => {
     localStorage.clear();
@@ -100,7 +109,7 @@ const Cart = ({
         {cart && cart.map((item, id) => <ProductInCart item={item} key={id} />)}
         <div className={classes.total}>
           <Typography variant="body2">TOTAL</Typography>
-          <Typography>$ 5,576</Typography>
+          <Typography>$ {total}</Typography>
         </div>
         <Link to="checkout">
           <button className={classes.ctaButton}>Checkout</button>

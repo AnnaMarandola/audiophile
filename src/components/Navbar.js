@@ -69,24 +69,21 @@ const Navbar = ({ classes }) => {
   const [totalItems, setTotalItems] = useState();
 
   const productList = { ...localStorage };
-
-
   const names = Object.keys(productList);
-  const quantities = Object.values(productList);
+  const qts = Object.values(productList);
+  const quantities = qts.map(Number);
+
+  useEffect(() => {
+    const sum = (previousValue, currentValue) => previousValue + currentValue;
+    quantities.length && setTotalItems(quantities.reduce(sum));
+  }, [quantities]);
+
   const products = names.map((name, index) => {
     return {
       name: names[index],
       qty: quantities[index],
     };
   });
-
-  useEffect(() => {
-    const sum = (previousValue, currentValue) => previousValue + currentValue;
-    setTotalItems(quantities.reduce(sum));
-  }, [quantities]);
-
-  console.log("quantites in Navbar", quantities);
-  console.log("totalItems", totalItems);
 
   const handleToogle = (e) => {
     if (!cartOpen) {

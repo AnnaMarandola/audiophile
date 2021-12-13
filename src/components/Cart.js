@@ -72,11 +72,9 @@ const Cart = ({
   let totals = cart.map((product) => {
     return product.qty * Number(product.price.replace(",", ""));
   });
-  console.log("totals", totals);
 
   const reducer = (acc, curr) => acc + curr;
   const total = totals.reduce(reducer)
-  console.log("total", total);
 
 
   // to do : on checkout, set totals to localstorage

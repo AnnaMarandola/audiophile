@@ -1,10 +1,10 @@
 import { withStyles } from "@mui/styles";
-import { Typography } from "@mui/material";
+import { Badge, Typography } from "@mui/material";
 import LOGO from "../assets/shared/desktop/logo.svg";
 import CART from "../assets/shared/desktop/icon-cart.svg";
 import MobileMenu from "./MobileMenu";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Cart from "./Cart";
 
 const styles = (theme) => ({
@@ -66,18 +66,27 @@ const styles = (theme) => ({
 const Navbar = ({ classes }) => {
   const [cartOpen, setcartOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-
+  const [totalItems, setTotalItems] = useState();
 
   const productList = { ...localStorage };
-  const names = Object.keys(productList)
-  const quantities = Object.values(productList)
- const products = names.map((name, index) => {
-   return {
-     name: names[index],
-     qty: quantities[index]
-   }
- })
 
+
+  const names = Object.keys(productList);
+  const quantities = Object.values(productList);
+  const products = names.map((name, index) => {
+    return {
+      name: names[index],
+      qty: quantities[index],
+    };
+  });
+
+  useEffect(() => {
+    const sum = (previousValue, currentValue) => previousValue + currentValue;
+    setTotalItems(quantities.reduce(sum));
+  }, [quantities]);
+
+  console.log("quantites in Navbar", quantities);
+  console.log("totalItems", totalItems);
 
   const handleToogle = (e) => {
     if (!cartOpen) {
@@ -120,12 +129,14 @@ const Navbar = ({ classes }) => {
             </Typography>
           </Link>
         </div>
-        <img
-          className={classes.cartIcon}
-          src={CART}
-          alt="cart icons"
-          onClick={handleToogle}
-        />
+        <Badge badgeContent={totalItems} color="warning">
+          <img
+            className={classes.cartIcon}
+            src={CART}
+            alt="cart icons"
+            onClick={handleToogle}
+          />
+        </Badge>
       </nav>
       {cartOpen && (
         <Cart
@@ -134,6 +145,7 @@ const Navbar = ({ classes }) => {
           close={handleToogle}
           productList={products}
           names={names}
+          totalItems={totalItems}
         />
       )}
     </div>

@@ -7,21 +7,27 @@ const styles = (theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: "1rem 2rem",
+    padding: "1rem",
   },
   itemImg: {
-    width: "30%",
+    width: "20%",
     borderRadius: "10px",
     backgroundColor: theme.palette.background.paper,
   },
   texts: {
-    width: "7rem",
+    width: "8rem",
   },
-  name: {},
+  name: {
+  },
   price: {},
   counter: {
     display: "flex",
+    backgroundColor: theme.palette.background.paper
   },
+  counterBtn: {
+    padding: "0 1rem",
+    border: "none",
+  }
 });
 
 const ProductInCart = ({ classes, item }) => {
@@ -51,15 +57,15 @@ const ProductInCart = ({ classes, item }) => {
       <div className={classes.productInfo}>
         <div className={classes.texts}>
           <Typography variant="body1">{item.name}</Typography>
-          <Typography variant="body2">{item.price}</Typography>
+          <Typography variant="body2">$ {item.price}</Typography>
         </div>
       </div>
       <div className={classes.counter}>
-        <button id={item.id} value="decrease" onClick={handleQty}>
+        <button value="decrease" onClick={handleQty} className={classes.counterBtn}>
           -
         </button>
-        <Typography>{newQty}</Typography>
-        <button value="increase" onClick={handleQty}>
+        <Typography className={classes.qty}>{newQty}</Typography>
+        <button value="increase" onClick={handleQty} className={classes.counterBtn}>
           +
         </button>
       </div>

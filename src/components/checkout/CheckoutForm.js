@@ -18,8 +18,10 @@ const styles = (theme) => ({
       padding: "3rem",
     },
     [theme.breakpoints.up("lg")]: {
-      padding: "3rem 7.5%",
-      border: "10px solid blue",
+      backgroundColor: theme.palette.background.paper,
+      flexDirection: "row",
+      padding: "4rem",
+      justifyContent: "space-evenly"
     },
   },
   title: {
@@ -27,7 +29,7 @@ const styles = (theme) => ({
       padding: "4rem",
     },
     [theme.breakpoints.up("lg")]: {
-      padding: "1rem 4rem",
+      padding: "3rem 0 0rem 3.5rem",
     },
   },
   content: {
@@ -39,15 +41,22 @@ const styles = (theme) => ({
       justifyContent: "space-between",
     },
   },
+  formCard: {
+    [theme.breakpoints.up("lg")]: {
+      backgroundColor: "white",
+      borderRadius: "10px",
+      width: "50%",
+      paddingBottom: "2rem"
+    },
+  },
+
   form: {
     display: "flex",
     flexDirection: "column",
     [theme.breakpoints.up("sm")]: {
       padding: "2rem 4rem",
     },
-    [theme.breakpoints.up("lg")]: {
-      width: "50%",
-    },
+    [theme.breakpoints.up("lg")]: {},
   },
   section: {
     display: "flex",
@@ -75,9 +84,11 @@ const styles = (theme) => ({
       width: "45%",
     },
   },
-  summaryContainer: {
+  summaryCard: {
     [theme.breakpoints.up("lg")]: {
       width: "30%",
+      backgroundColor: "white",
+      borderRadius: "10px",
     },
   },
   ctaButton: {
@@ -101,127 +112,127 @@ const styles = (theme) => ({
 const CheckoutForm = ({ classes }) => {
   return (
     <div className={classes.root}>
-      <Typography variant="h3" className={classes.title}>
-        CHECKOUT
-      </Typography>
-
-      <div className={classes.content}>
-        <form className={classes.form}>
-          <Typography variant="h6" className={classes.sectionTitle}>
-            Billing details
-          </Typography>
-          <div className={classes.section}>
-            <TextField
-              required
-              variant="outlined"
-              label="Name"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-            <TextField
-              required
-              variant="outlined"
-              label="Email Adress"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-            <TextField
-              required
-              variant="outlined"
-              label="Phone Number"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-          </div>
-          <Typography variant="h6" className={classes.sectionTitle}>
-            Shipping info
-          </Typography>
-          <div className={classes.section}>
-            <TextField
-              required
-              variant="outlined"
-              label="Your Adress"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-            <TextField
-              required
-              variant="outlined"
-              label="ZIP Code"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-            <TextField
-              required
-              variant="outlined"
-              label="City"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-            <TextField
-              required
-              variant="outlined"
-              label="Country"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-          </div>
-          <Typography variant="h6" className={classes.sectionTitle}>
-            Payment Details
-          </Typography>
-          <Typography variant="body1" className={classes.sectionTitle}>
-            Payment Method *
-          </Typography>
-          <div className={classes.section}>
-            <RadioGroup>
-              <FormControlLabel
-                value="e-Money"
-                label="e-Money"
-                control={<Radio />}
+      <div className={classes.formCard}>
+        <Typography variant="h3" className={classes.title}>
+          CHECKOUT
+        </Typography>
+        <div className={classes.content}>
+          <form className={classes.form}>
+            <Typography variant="h6" className={classes.sectionTitle}>
+              Billing details
+            </Typography>
+            <div className={classes.section}>
+              <TextField
+                required
+                variant="outlined"
+                label="Name"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
               />
-              <FormControlLabel
-                value="Cash on Delivery"
-                label="Cash on Delevery"
-                control={<Radio />}
+              <TextField
+                required
+                variant="outlined"
+                label="Email Adress"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
               />
-            </RadioGroup>
-            <TextField
-              variant="outlined"
-              label="e-Money Number"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-            <TextField
-              variant="outlined"
-              label="e-Money PIN"
-              className={classes.input}
-              InputProps={{
-                className: classes.inputField,
-              }}
-            />
-          </div>
-        </form>
-
-        <div className={classes.summaryContainer}>
-          <CheckoutSummary />
-          <button className={classes.ctaButton}>CONTINUE & PAY</button>
+              <TextField
+                required
+                variant="outlined"
+                label="Phone Number"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
+              />
+            </div>
+            <Typography variant="h6" className={classes.sectionTitle}>
+              Shipping info
+            </Typography>
+            <div className={classes.section}>
+              <TextField
+                required
+                variant="outlined"
+                label="Your Adress"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
+              />
+              <TextField
+                required
+                variant="outlined"
+                label="ZIP Code"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
+              />
+              <TextField
+                required
+                variant="outlined"
+                label="City"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
+              />
+              <TextField
+                required
+                variant="outlined"
+                label="Country"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
+              />
+            </div>
+            <Typography variant="h6" className={classes.sectionTitle}>
+              Payment Details
+            </Typography>
+            <Typography variant="body1" className={classes.sectionTitle}>
+              Payment Method *
+            </Typography>
+            <div className={classes.section}>
+              <RadioGroup>
+                <FormControlLabel
+                  value="e-Money"
+                  label="e-Money"
+                  control={<Radio />}
+                />
+                <FormControlLabel
+                  value="Cash on Delivery"
+                  label="Cash on Delevery"
+                  control={<Radio />}
+                />
+              </RadioGroup>
+              <TextField
+                variant="outlined"
+                label="e-Money Number"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
+              />
+              <TextField
+                variant="outlined"
+                label="e-Money PIN"
+                className={classes.input}
+                InputProps={{
+                  className: classes.inputField,
+                }}
+              />
+            </div>
+          </form>
         </div>
+      </div>
+      <div className={classes.summaryCard}>
+        <CheckoutSummary />
+        <button className={classes.ctaButton}>CONTINUE & PAY</button>
       </div>
     </div>
   );

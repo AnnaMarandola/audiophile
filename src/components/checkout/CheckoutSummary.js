@@ -1,6 +1,6 @@
 import { withStyles } from "@mui/styles";
 import { Typography } from "@mui/material";
-import cartData from "../../cartData";
+import cartData from "../../data/cartData";
 
 const styles = (theme) => ({
   root: {
@@ -84,12 +84,10 @@ const CheckoutForm = ({ classes }) => {
   let totals = cart.map((product) => {
     return product.qty * Number(product.price.replace(",", ""));
   });
-
   const reducer = (acc, curr) => acc + curr;
   const total = totals.reduce(reducer);
 
   const shipping = 50;
-
   const grandTotal = total + shipping;
   const vta = (grandTotal * 20)/100
 

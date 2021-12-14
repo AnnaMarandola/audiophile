@@ -1,7 +1,7 @@
 import { Popover, Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import { NavLink } from "react-router-dom";
-import cartData from "../cartData";
+import cartData from "../../data/cartData";
 import ProductInCart from "./ProductInCart";
 
 const styles = (theme) => ({

@@ -1,6 +1,6 @@
-import CARTXX991 from "./assets/cart/image-xx99-mark-one-headphones.jpg";
-import CARTXX992 from "./assets/cart/image-xx99-mark-two-headphones.jpg";
-import CARTXX59 from "./assets/cart/image-xx59-headphones.jpg";
+import CARTXX991 from "../assets/cart/image-xx99-mark-one-headphones.jpg";
+import CARTXX992 from "../assets/cart/image-xx99-mark-two-headphones.jpg";
+import CARTXX59 from "../assets/cart/image-xx59-headphones.jpg";
 
 const cartData = [
   { id: "XX99 Mark II Headphones", name:"XX99 Mark II", picture: CARTXX992, price: "2,999" },

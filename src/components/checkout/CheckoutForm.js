@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { withStyles } from "@mui/styles";
 import {
   Typography,
@@ -7,6 +8,7 @@ import {
   Radio,
 } from "@mui/material";
 import CheckoutSummary from "./CheckoutSummary";
+import OrderModal from "./OrderModal";
 
 const styles = (theme) => ({
   root: {
@@ -21,7 +23,7 @@ const styles = (theme) => ({
       backgroundColor: theme.palette.background.paper,
       flexDirection: "row",
       padding: "4rem",
-      justifyContent: "space-evenly"
+      justifyContent: "space-evenly",
     },
   },
   title: {
@@ -46,7 +48,7 @@ const styles = (theme) => ({
       backgroundColor: "white",
       borderRadius: "10px",
       width: "50%",
-      paddingBottom: "2rem"
+      paddingBottom: "2rem",
     },
   },
 
@@ -110,6 +112,29 @@ const styles = (theme) => ({
 });
 
 const CheckoutForm = ({ classes }) => {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
+  const [adress, setAdress] = useState();
+  const [zipCode, setZipCode] = useState();
+  const [city, setCity] = useState();
+  const [country, setCountry] = useState();
+  const [payementMethod, setPayementMethod] = useState();
+  const [id, setId] = useState();
+  const [pin, setPin] = useState();
+
+  const [orderSent, setOrderSent] = useState(false);
+
+  const [open, setOpen] = useState(false);
+  const handleCloseModal = () => setOpen(false);
+
+  const handleSubmit = () => {
+    setOrderSent(true);
+    setOpen(true);
+  };
+
+  console.log("orderSent", orderSent);
+
   return (
     <div className={classes.root}>
       <div className={classes.formCard}>
@@ -117,7 +142,7 @@ const CheckoutForm = ({ classes }) => {
           CHECKOUT
         </Typography>
         <div className={classes.content}>
-          <form className={classes.form}>
+          <form className={classes.form} onSubmit={handleSubmit}>
             <Typography variant="h6" className={classes.sectionTitle}>
               Billing details
             </Typography>
@@ -126,6 +151,8 @@ const CheckoutForm = ({ classes }) => {
                 required
                 variant="outlined"
                 label="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -135,6 +162,8 @@ const CheckoutForm = ({ classes }) => {
                 required
                 variant="outlined"
                 label="Email Adress"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -144,6 +173,8 @@ const CheckoutForm = ({ classes }) => {
                 required
                 variant="outlined"
                 label="Phone Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -158,6 +189,8 @@ const CheckoutForm = ({ classes }) => {
                 required
                 variant="outlined"
                 label="Your Adress"
+                value={adress}
+                onChange={(e) => setAdress(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -167,6 +200,8 @@ const CheckoutForm = ({ classes }) => {
                 required
                 variant="outlined"
                 label="ZIP Code"
+                value={zipCode}
+                onChange={(e) => setZipCode(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -176,6 +211,8 @@ const CheckoutForm = ({ classes }) => {
                 required
                 variant="outlined"
                 label="City"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -185,6 +222,8 @@ const CheckoutForm = ({ classes }) => {
                 required
                 variant="outlined"
                 label="Country"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -202,17 +241,27 @@ const CheckoutForm = ({ classes }) => {
                 <FormControlLabel
                   value="e-Money"
                   label="e-Money"
-                  control={<Radio />}
+                  control={
+                    <Radio
+                      onChange={(e) => setPayementMethod(e.target.value)}
+                    />
+                  }
                 />
                 <FormControlLabel
                   value="Cash on Delivery"
                   label="Cash on Delevery"
-                  control={<Radio />}
+                  control={
+                    <Radio
+                      onChange={(e) => setPayementMethod(e.target.value)}
+                    />
+                  }
                 />
               </RadioGroup>
               <TextField
                 variant="outlined"
                 label="e-Money Number"
+                value={id}
+                onChange={(e) => setId(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -221,6 +270,8 @@ const CheckoutForm = ({ classes }) => {
               <TextField
                 variant="outlined"
                 label="e-Money PIN"
+                value={pin}
+                onChange={(e) => setPin(e.target.value)}
                 className={classes.input}
                 InputProps={{
                   className: classes.inputField,
@@ -232,7 +283,14 @@ const CheckoutForm = ({ classes }) => {
       </div>
       <div className={classes.summaryCard}>
         <CheckoutSummary />
-        <button className={classes.ctaButton}>CONTINUE & PAY</button>
+        <button
+          type="submit"
+          className={classes.ctaButton}
+          onClick={handleSubmit}
+        >
+          CONTINUE & PAY
+        </button>
+      <OrderModal open={open} handleClose={handleCloseModal} />
       </div>
     </div>
   );

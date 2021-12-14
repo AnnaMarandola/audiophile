@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
-import productsData from "../../productsData";
+import productsData from "../../data/productsData";
 
 const styles = (theme) => ({
   root: {

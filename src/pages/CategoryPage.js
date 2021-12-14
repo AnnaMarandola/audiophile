@@ -3,7 +3,7 @@ import CategoryHeader from "../components/CategoryHeader";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import CategoriesNav from "../components/CategoriesNav";
-import productsData from "../productsData.js";
+import productsData from "../data/productsData";
 import ProductsPreview from "../components/products/ProductsPreview";
 import BestGear from "../components/BestGear";
 

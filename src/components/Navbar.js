@@ -5,7 +5,7 @@ import CART from "../assets/shared/desktop/icon-cart.svg";
 import MobileMenu from "./MobileMenu";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Cart from "./Cart";
+import Cart from "./cart/Cart";
 
 const styles = (theme) => ({
   root: {

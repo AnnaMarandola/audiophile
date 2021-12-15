@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { withStyles } from "@mui/styles";
-import { Typography } from "@mui/material";
+import { Popover, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Features from "./Features";
 import InTheBox from "./InTheBox";
@@ -152,14 +152,25 @@ const styles = (theme) => ({
       justifyContent: "space-around",
     },
   },
+  popoverText: {
+    padding: "0.5rem"
+  }
 });
 
 const ProductDetails = ({ classes, product, category }) => {
   const [qty, setQty] = useState(1);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleCart = () => {
+  const open = Boolean(anchorEl);
+
+  const handleCart = (e) => {
     localStorage.setItem(product.name, qty);
+    setAnchorEl(e.currentTarget)
   };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  }
   
   return (
     <div className={classes.root}>
@@ -208,6 +219,15 @@ const ProductDetails = ({ classes, product, category }) => {
               add to cart
             </button>
           </div>
+          <Popover
+          xs={{p: 1}}
+          className={classes.popover}
+          open={open}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center"}}>
+            <Typography variant="body1"className={classes.popoverText}>Item added to cart</Typography>
+          </Popover>
         </div>
       </div>
       <div className={classes.featuresAndBox}>

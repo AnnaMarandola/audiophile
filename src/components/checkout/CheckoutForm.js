@@ -4,8 +4,11 @@ import {
   Typography,
   TextField,
   RadioGroup,
-  FormControlLabel,
   Radio,
+  FormControlLabel,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
 } from "@mui/material";
 import CheckoutSummary from "./CheckoutSummary";
 import OrderModal from "./OrderModal";
@@ -112,24 +115,41 @@ const styles = (theme) => ({
 });
 
 const CheckoutForm = ({ classes }) => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [adress, setAdress] = useState();
-  const [zipCode, setZipCode] = useState();
-  const [city, setCity] = useState();
-  const [country, setCountry] = useState();
-  const [payementMethod, setPayementMethod] = useState();
-  const [id, setId] = useState();
-  const [pin, setPin] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [adress, setAdress] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [payementMethod, setPayementMethod] = useState("");
+  const [id, setId] = useState("");
+  const [pin, setPin] = useState("");
 
   const [orderSent, setOrderSent] = useState(false);
 
   const [open, setOpen] = useState(false);
   const handleCloseModal = () => setOpen(false);
 
-  const handleSubmit = () => {
-    setOrderSent(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      name.lenght &&
+      email.length &&
+      phone.length &&
+      adress.length &&
+      zipCode.length &&
+      city.length &&
+      country.length &&
+      payementMethod.length
+    ) {
+      if (payementMethod === "e-Money") {
+        id.length && pin.length && setOrderSent(true);
+      } else {
+        orderSent(true);
+      }
+      setOrderSent(true);
+    }
     setOpen(true);
   };
 
@@ -147,30 +167,34 @@ const CheckoutForm = ({ classes }) => {
               Billing details
             </Typography>
             <div className={classes.section}>
+              <FormControl required>
+                <InputLabel className={classes.label}>Name</InputLabel>
+
+                <OutlinedInput
+                  name="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className={classes.input}
+                  InputProps={{
+                    className: classes.inputField,
+                  }}
+                />
+              </FormControl>
+              <FormControl required>
+                <TextField
+                  variant="outlined"
+                  label="Email Adress"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={classes.input}
+                  InputProps={{
+                    className: classes.inputField,
+                  }}
+                />
+              </FormControl>
               <TextField
-                required
-                variant="outlined"
-                label="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className={classes.input}
-                InputProps={{
-                  className: classes.inputField,
-                }}
-              />
-              <TextField
-                required
-                variant="outlined"
-                label="Email Adress"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={classes.input}
-                InputProps={{
-                  className: classes.inputField,
-                }}
-              />
-              <TextField
-                required
                 variant="outlined"
                 label="Phone Number"
                 value={phone}
@@ -185,50 +209,55 @@ const CheckoutForm = ({ classes }) => {
               Shipping info
             </Typography>
             <div className={classes.section}>
-              <TextField
-                required
-                variant="outlined"
-                label="Your Adress"
-                value={adress}
-                onChange={(e) => setAdress(e.target.value)}
-                className={classes.input}
-                InputProps={{
-                  className: classes.inputField,
-                }}
-              />
-              <TextField
-                required
-                variant="outlined"
-                label="ZIP Code"
-                value={zipCode}
-                onChange={(e) => setZipCode(e.target.value)}
-                className={classes.input}
-                InputProps={{
-                  className: classes.inputField,
-                }}
-              />
-              <TextField
-                required
-                variant="outlined"
-                label="City"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                className={classes.input}
-                InputProps={{
-                  className: classes.inputField,
-                }}
-              />
-              <TextField
-                required
-                variant="outlined"
-                label="Country"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-                className={classes.input}
-                InputProps={{
-                  className: classes.inputField,
-                }}
-              />
+              <FormControl required>
+                <TextField
+                  variant="outlined"
+                  label="Your Adress"
+                  value={adress}
+                  onChange={(e) => setAdress(e.target.value)}
+                  className={classes.input}
+                  InputProps={{
+                    className: classes.inputField,
+                  }}
+                />
+              </FormControl>
+              <FormControl required>
+                <TextField
+                  required
+                  variant="outlined"
+                  label="ZIP Code"
+                  value={zipCode}
+                  onChange={(e) => setZipCode(e.target.value)}
+                  className={classes.input}
+                  InputProps={{
+                    className: classes.inputField,
+                  }}
+                />
+              </FormControl>
+              <FormControl required>
+                <TextField
+                  variant="outlined"
+                  label="City"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className={classes.input}
+                  InputProps={{
+                    className: classes.inputField,
+                  }}
+                />
+              </FormControl>
+              <FormControl required>
+                <TextField
+                  variant="outlined"
+                  label="Country"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                  className={classes.input}
+                  InputProps={{
+                    className: classes.inputField,
+                  }}
+                />
+              </FormControl>
             </div>
             <Typography variant="h6" className={classes.sectionTitle}>
               Payment Details
@@ -237,46 +266,56 @@ const CheckoutForm = ({ classes }) => {
               Payment Method *
             </Typography>
             <div className={classes.section}>
-              <RadioGroup>
-                <FormControlLabel
-                  value="e-Money"
-                  label="e-Money"
-                  control={
-                    <Radio
-                      onChange={(e) => setPayementMethod(e.target.value)}
-                    />
-                  }
+              <FormControl required>
+                <RadioGroup>
+                  <FormControlLabel
+                    value="e-Money"
+                    label="e-Money"
+                    control={
+                      <Radio
+                        onChange={(e) => setPayementMethod(e.target.value)}
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    value="Cash on Delivery"
+                    label="Cash on Delevery"
+                    control={
+                      <Radio
+                        onChange={(e) => setPayementMethod(e.target.value)}
+                      />
+                    }
+                  />
+                </RadioGroup>
+              </FormControl>
+              <FormControl
+                required={payementMethod === "e-Money" ? true : false}
+              >
+                <TextField
+                  variant="outlined"
+                  label="e-Money Number"
+                  value={id}
+                  onChange={(e) => setId(e.target.value)}
+                  className={classes.input}
+                  InputProps={{
+                    className: classes.inputField,
+                  }}
                 />
-                <FormControlLabel
-                  value="Cash on Delivery"
-                  label="Cash on Delevery"
-                  control={
-                    <Radio
-                      onChange={(e) => setPayementMethod(e.target.value)}
-                    />
-                  }
+              </FormControl>
+              <FormControl
+                required={payementMethod === "e-Money" ? true : false}
+              >
+                <TextField
+                  variant="outlined"
+                  label="e-Money PIN"
+                  value={pin}
+                  onChange={(e) => setPin(e.target.value)}
+                  className={classes.input}
+                  InputProps={{
+                    className: classes.inputField,
+                  }}
                 />
-              </RadioGroup>
-              <TextField
-                variant="outlined"
-                label="e-Money Number"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
-                className={classes.input}
-                InputProps={{
-                  className: classes.inputField,
-                }}
-              />
-              <TextField
-                variant="outlined"
-                label="e-Money PIN"
-                value={pin}
-                onChange={(e) => setPin(e.target.value)}
-                className={classes.input}
-                InputProps={{
-                  className: classes.inputField,
-                }}
-              />
+              </FormControl>
             </div>
           </form>
         </div>
@@ -290,7 +329,7 @@ const CheckoutForm = ({ classes }) => {
         >
           CONTINUE & PAY
         </button>
-      <OrderModal open={open} handleClose={handleCloseModal} />
+        <OrderModal open={open} handleClose={handleCloseModal} />
       </div>
     </div>
   );

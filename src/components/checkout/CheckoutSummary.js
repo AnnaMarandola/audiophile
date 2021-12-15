@@ -62,7 +62,6 @@ const CheckoutForm = ({ classes }) => {
   const names = Object.keys(cartInStorage);
   const qts = Object.values(cartInStorage);
   const quantities = qts.map(Number);
-
   const products = names.map((name, index) => {
     return {
       name: names[index],

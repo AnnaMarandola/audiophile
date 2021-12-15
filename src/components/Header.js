@@ -65,6 +65,7 @@ const styles = (theme) => ({
     fontSize: "1rem",
     padding: "1rem 2rem",
     border: "none",
+    marginTop: "2rem",
     "&:hover": {
       backgroundColor: theme.palette.primary.pink,
       color: theme.palette.background.default,

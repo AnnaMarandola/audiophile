@@ -9,10 +9,11 @@ const styles = (theme) => ({
 });
 
 const CheckoutPage = ({ classes }) => {
+  const truc = "truc"
   return (
     <div className={classes.root}>
       <Navbar />
-      <CheckoutForm />
+      <CheckoutForm truc={truc}/>
       <Footer />
     </div>
   );

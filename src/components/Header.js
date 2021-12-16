@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import BGD from "../assets/home/desktop/image-hero.jpg";
 import BGM from "../assets/home/mobile/image-header.jpg";
 import BGT from "../assets/home/tablet/image-header.jpg";
+import { Link } from "react-router-dom";
 
 const styles = (theme) => ({
   root: {
@@ -87,7 +88,9 @@ const Header = ({ classes }) => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </Typography>
-        <button className={classes.ctaButton}>See product</button>
+        <Link to="/:headphones/:xx99-mark-two-headphones">
+          <button className={classes.ctaButton}>See product</button>
+        </Link>
       </div>
     </div>
   );

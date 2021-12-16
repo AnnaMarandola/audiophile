@@ -10,6 +10,7 @@ import ZX7T from "../assets/home/tablet/image-speaker-zx7.jpg";
 import YX1 from "../assets/home/desktop/image-earphones-yx1.jpg";
 import YX1M from "../assets/home/mobile/image-earphones-yx1.jpg";
 import YX1T from "../assets/home/tablet/image-earphones-yx1.jpg";
+import { Link } from "react-router-dom";
 
 const styles = (theme) => ({
   root: {
@@ -37,7 +38,7 @@ const styles = (theme) => ({
     borderRadius: "10px",
     [theme.breakpoints.up("sm")]: {
       paddingBottom: "2rem",
-      margin: "2rem 0"
+      margin: "2rem 0",
     },
     [theme.breakpoints.up("lg")]: {
       backgroundSize: "contain",
@@ -46,7 +47,7 @@ const styles = (theme) => ({
       height: "30rem",
       backgroundPosition: "top  left 10%",
       justifyContent: "space-around",
-      overflow: "hidden"
+      overflow: "hidden",
     },
   },
   zx9Img: {
@@ -92,19 +93,19 @@ const styles = (theme) => ({
     "&:hover": {
       backgroundColor: "grey",
     },
-    "&:nth-child(2)": {
-      color: "black",
-      backgroundColor: "transparent",
-      border: "1px solid black",
-      marginTop: "2rem ",
-      "&:hover": {
-        backgroundColor: theme.palette.primary.main,
-        color: "white",
-      },
+  },
+  secondLevelBtn2: {
+    padding: "1rem 2rem",
+    textTransform: "uppercase",
+    color: "black",
+    backgroundColor: "transparent",
+    border: "1px solid black",
+    marginTop: "2rem ",
+    "&:hover": {
+      backgroundColor: theme.palette.primary.main,
+      color: "white",
     },
   },
-
-
 
   zx7Speaker: {
     height: "15rem",
@@ -121,7 +122,7 @@ const styles = (theme) => ({
       backgroundImage: `url(${ZX7T})`,
       height: "20rem",
       padding: "4rem",
-      marginBottom: "3rem"
+      marginBottom: "3rem",
     },
     [theme.breakpoints.up("lg")]: {
       backgroundImage: `url(${ZX7})`,
@@ -133,8 +134,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up("sm")]: {
       flexDirection: "row",
     },
-    [theme.breakpoints.up("lg")]: {
-    },
+    [theme.breakpoints.up("lg")]: {},
   },
   yx1Img: {
     height: "12rem",
@@ -147,7 +147,7 @@ const styles = (theme) => ({
       backgroundImage: `url(${YX1T})`,
       width: "50%",
       height: "25rem",
-      marginRight: "2rem"
+      marginRight: "2rem",
     },
     [theme.breakpoints.up("lg")]: {
       backgroundImage: `url(${YX1})`,
@@ -167,9 +167,7 @@ const styles = (theme) => ({
       height: "21rem",
       margin: 0,
     },
-    [theme.breakpoints.up("lg")]: {
-    },
-
+    [theme.breakpoints.up("lg")]: {},
   },
 });
 
@@ -194,7 +192,9 @@ const ProductBooster = ({ classes }) => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound
           </Typography>
-          <button className={classes.secondLevelBtn}>see product</button>
+          <Link to="/:speakers/:zx9-speaker">
+            <button className={classes.secondLevelBtn}>see product</button>
+          </Link>
         </div>
       </div>
 
@@ -203,7 +203,9 @@ const ProductBooster = ({ classes }) => {
           <Typography variant="h2" className={classes.title}>
             zx7 speaker
           </Typography>
-          <button className={classes.secondLevelBtn}>see product</button>
+          <Link to="/:speakers/:zx7-speaker">
+            <button className={classes.secondLevelBtn2}>see product</button>
+          </Link>
         </div>
       </div>
 
@@ -214,11 +216,12 @@ const ProductBooster = ({ classes }) => {
             <Typography variant="h2" className={classes.title}>
               yx1 earphones
             </Typography>
-            <button className={classes.secondLevelBtn}>see product</button>
+            <Link to="/:earphones/:yx1-earphones">
+              <button className={classes.secondLevelBtn2}>see product</button>
+            </Link>
           </div>
         </div>
       </div>
-
     </div>
   );
 };

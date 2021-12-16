@@ -77,7 +77,7 @@ const BestGear = ({ classes }) => {
           <span variant="h2" className={classes.titleSpan}> best </span>
           audio gear
         </Typography>
-        <Typography variant="body1" className={classes.text}>
+        <Typography variant="body2" className={classes.text}>
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
           We have a large showroom and luxury demonstration rooms available for

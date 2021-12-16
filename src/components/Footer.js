@@ -4,6 +4,7 @@ import LOGO from "../assets/shared/desktop/logo.svg";
 import FACEBOOK from "../assets/shared/desktop/icon-facebook.svg";
 import TWITTER from "../assets/shared/desktop/icon-twitter.svg";
 import INSTAGRAM from "../assets/shared/desktop/icon-instagram.svg";
+import { Link } from "react-router-dom";
 
 const styles = (theme) => ({
   root: {
@@ -18,7 +19,7 @@ const styles = (theme) => ({
       padding: "0 5%",
     },
     [theme.breakpoints.up("lg")]: {
-        paddingBottom: "4rem",
+      paddingBottom: "4rem",
     },
   },
   decoration: {
@@ -40,10 +41,10 @@ const styles = (theme) => ({
       alignItems: "flex-start",
     },
     [theme.breakpoints.up("lg")]: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        width: "100%",
-        alignItems: "center"
+      flexDirection: "row",
+      justifyContent: "space-between",
+      width: "100%",
+      alignItems: "center",
     },
   },
   nav: {
@@ -61,10 +62,14 @@ const styles = (theme) => ({
   },
   menuItem: {
     textTransform: "uppercase",
+    color: "white",
     [theme.breakpoints.up("sm")]: {
       paddingRight: "3rem",
     },
     [theme.breakpoints.up("lg")]: {},
+  },
+  navLink: {
+    textDecoration: "none",
   },
   textContainer: {
     width: "80%",
@@ -88,8 +93,8 @@ const styles = (theme) => ({
       justifyContent: "space-between",
     },
     [theme.breakpoints.up("lg")]: {
-        flexDirection: "column-reverse",
-        width: "30%",
+      flexDirection: "column-reverse",
+      width: "30%",
     },
   },
   copyright: {},
@@ -100,12 +105,12 @@ const styles = (theme) => ({
     padding: "2rem",
     [theme.breakpoints.up("sm")]: {
       width: "50%",
-      padding: "2rem 0"
+      padding: "2rem 0",
     },
     [theme.breakpoints.up("lg")]: {
-        paddingBottom: "4rem",
-        width: "30%",
-        justifyContent: "space-between"
+      paddingBottom: "4rem",
+      width: "30%",
+      justifyContent: "space-between",
     },
   },
 });
@@ -117,18 +122,26 @@ const Footer = ({ classes }) => {
       <div className={classes.line}>
         <img src={LOGO} alt="audiophile" className={classes.logo} />
         <nav className={classes.nav}>
-          <Typography variant="h6" className={classes.menuItem}>
-            home
-          </Typography>
-          <Typography variant="h6" className={classes.menuItem}>
-            headphones
-          </Typography>
-          <Typography variant="h6" className={classes.menuItem}>
-            speakers
-          </Typography>
-          <Typography variant="h6" className={classes.menuItem}>
-            earphones
-          </Typography>
+          <Link to="/" className={classes.navLink}>
+            <Typography variant="h6" className={classes.menuItem}>
+              home
+            </Typography>
+          </Link>
+          <Link to="/:headphones" className={classes.navLink}>
+            <Typography variant="h6" className={classes.menuItem}>
+              headphones
+            </Typography>
+          </Link>
+          <Link to="/:speakers" className={classes.navLink}>
+            <Typography variant="h6" className={classes.menuItem}>
+              speakers
+            </Typography>
+          </Link>
+          <Link to="/:earphones" className={classes.navLink}>
+            <Typography variant="h6" className={classes.menuItem}>
+              earphones
+            </Typography>
+          </Link>
         </nav>
       </div>
       <div className={classes.line}>

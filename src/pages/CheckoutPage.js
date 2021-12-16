@@ -9,11 +9,13 @@ const styles = (theme) => ({
 });
 
 const CheckoutPage = ({ classes }) => {
-  const truc = "truc"
+  window.scrollTo(0, 0);
+
+
   return (
     <div className={classes.root}>
       <Navbar />
-      <CheckoutForm truc={truc}/>
+      <CheckoutForm/>
       <Footer />
     </div>
   );

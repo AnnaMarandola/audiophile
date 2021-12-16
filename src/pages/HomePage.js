@@ -12,6 +12,8 @@ const styles = (theme) => ({
   }
 })
 const HomePage = ({classes}) => {
+  window.scrollTo(0, 0);
+
   return (
     <div className={classes.root}>
       <Navbar />

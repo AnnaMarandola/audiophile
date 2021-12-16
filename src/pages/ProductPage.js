@@ -10,7 +10,7 @@ import { useParams } from "react-router";
 
 const styles = (theme) => ({});
 
-const ProductPage = ({ classes, match }) => {
+const ProductPage = ({ classes }) => {
   window.scrollTo(0, 0);
 
   const { product } = useParams();

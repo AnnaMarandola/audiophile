@@ -32,7 +32,7 @@ const styles = (theme) => ({
   },
   greetings: {
     paddingTop: "2rem",
-    
+    textAlign: "center",
   },
   confirmation: {
     padding: "1rem 0",
@@ -47,18 +47,19 @@ const styles = (theme) => ({
   },
   productCard: {
     display: "flex",
-    padding: "0 1rem",
-    width: "80%",
+    flexDirection: "column",
+    padding: "0.5rem",
+    width: "90%",
     justifyContent: "space-evenly",
     alignItems: "center",
     marginBottom: "1rem"
   },
   productInfos: {
-    width: "50%",
+    textAlign: "center"
   },
   totalContainer: {
     backgroundColor: "black",
-    padding: "1rem 0 1rem 4rem",
+    padding: "2rem",
   },
   grandTotal: {
     color: "white",
@@ -70,6 +71,8 @@ const styles = (theme) => ({
     fontSize: "1rem",
     padding: "1.2rem 2rem",
     border: "none",
+    margin: "2rem",
+
     "&:hover": {
       backgroundColor: theme.palette.primary.pink,
       color: theme.palette.background.default,

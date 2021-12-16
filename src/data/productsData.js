@@ -23,7 +23,6 @@ import OTHERZX7M from "../assets/shared/mobile/image-zx7-speaker.jpg";
 import OTHERZX7T from "../assets/shared/tablet/image-zx7-speaker.jpg";
 import OTHERZX7D from "../assets/shared/desktop/image-zx7-speaker.jpg";
 
-
 import XX99GALLERY1M from "../assets/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg";
 import XX99GALLERY2M from "../assets/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg";
 import XX99GALLERY3M from "../assets/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg";
@@ -55,6 +54,17 @@ import ZX9GALLERY3T from "../assets/product-zx9-speaker/tablet/image-gallery-3.j
 import ZX9GALLERY1D from "../assets/product-zx9-speaker/desktop/image-gallery-1.jpg";
 import ZX9GALLERY2D from "../assets/product-zx9-speaker/desktop/image-gallery-2.jpg";
 import ZX9GALLERY3D from "../assets/product-zx9-speaker/desktop/image-gallery-3.jpg";
+
+import YX1PREVIEW from "../assets/product-yx1-earphones/mobile/image-category-page-preview.jpg";
+import YX1GALLERY1M from "../assets/product-yx1-earphones/mobile/image-gallery-1.jpg";
+import YX1GALLERY2M from "../assets/product-yx1-earphones/mobile/image-gallery-2.jpg";
+import YX1GALLERY3M from "../assets/product-yx1-earphones/mobile/image-gallery-3.jpg";
+import YX1GALLERY1T from "../assets/product-yx1-earphones/tablet/image-gallery-1.jpg";
+import YX1GALLERY2T from "../assets/product-yx1-earphones/tablet/image-gallery-2.jpg";
+import YX1GALLERY3T from "../assets/product-yx1-earphones/tablet/image-gallery-3.jpg";
+import YX1GALLERY1D from "../assets/product-yx1-earphones/desktop/image-gallery-1.jpg";
+import YX1GALLERY2D from "../assets/product-yx1-earphones/desktop/image-gallery-2.jpg";
+import YX1GALLERY3D from "../assets/product-yx1-earphones/desktop/image-gallery-3.jpg";
 
 const productsData = [
   {
@@ -501,78 +511,97 @@ const productsData = [
     ],
   },
 
-
-  { category: "earphones",
- products: [
   {
-    id: 5,
-    slug: "",
-    name: "",
-    categoryImage: "",
-    category: "speakers",
-    new: true,
-    price: "",
-    description: "",
-    features: "",
-    includes: [
+    category: "earphones",
+    products: [
       {
-        quantity: 1,
-        item: "",
-      },
-    ],
-    gallery: {
-      first: {
-        mobile: XX992GALLERY1M,
-        tablet: XX992GALLERY1T,
-        desktop: XX992GALLERY1D,
-      },
-      second: {
-        mobile: XX992GALLERY2M,
-        tablet: XX992GALLERY2T,
-        desktop: XX992GALLERY2D,
-      },
-      third: {
-        mobile: XX992GALLERY3M,
-        tablet: XX992GALLERY3T,
-        desktop: XX992GALLERY3D,
-      },
-    },
-    others: [
-      {
-        slug: "xx99-mark-one-headphones",
-        name: "XX99 Mark I",
-        category: "headphones",
+        id: 6,
+        slug: "yx1-earphones",
+        name: "YX1 Wireless Earphones",
+        categoryImage: YX1PREVIEW,
+        category: "earphones",
+        new: true,
+        price: "5,99",
+        description:
+          "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+        features:
+          "Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.\n\nThe YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.",
+        includes: [
+          {
+            quantity: 2,
+            item: "Earphone unit",
+          },
+          {
+            quantity: 6,
+            item: "Multi-size earplugs",
+          },
+          {
+            quantity: 1,
+            item: "User manual",
+          },
+          {
+            quantity: 1,
+            item: "USB-C charging cable",
+          },
+          {
+            quantity: 1,
+            item: "Travel pouch",
+          },
+        ],
+        gallery: {
+          first: {
+            mobile: YX1GALLERY1M,
+            tablet: YX1GALLERY1T,
+            desktop: YX1GALLERY1D,
+          },
+          second: {
+            mobile: YX1GALLERY2M,
+            tablet: YX1GALLERY2T,
+            desktop: YX1GALLERY2D,
+          },
+          third: {
+            mobile: YX1GALLERY3M,
+            tablet: YX1GALLERY3T,
+            desktop: YX1GALLERY3D,
+          },
+        },
+        others: [
+          {
+            slug: "xx99-mark-one-headphones",
+            name: "XX99 Mark I",
+            category: "headphones",
 
-        image: {
-          mobile: OTHERXX99M,
-          tablet: OTHERXX99T,
-          desktop: OTHERXX99D,
-        },
-      },
-      {
-        slug: "xx59-headphones",
-        name: "XX59",
-        category: "headphones",
+            image: {
+              mobile: OTHERXX99M,
+              tablet: OTHERXX99T,
+              desktop: OTHERXX99D,
+            },
+          },
+          {
+            slug: "xx59-headphones",
+            name: "XX59",
+            category: "headphones",
 
-        image: {
-          mobile: OTHERXX59M,
-          tablet: OTHERXX59T,
-          desktop: OTHERXX59D,
-        },
-      },
-      {
-        slug: "zx9-speaker",
-        name: "ZX9 Speaker",
-        image: {
-          mobile: OTHERZX9M,
-          tablet: OTHERZX9T,
-          desktop: OTHERZX9D,
-        },
+            image: {
+              mobile: OTHERXX59M,
+              tablet: OTHERXX59T,
+              desktop: OTHERXX59D,
+            },
+          },
+          {
+            slug: "zx9-speaker",
+            name: "ZX9 Speaker",
+            image: {
+              mobile: OTHERZX9M,
+              tablet: OTHERZX9T,
+              desktop: OTHERZX9D,
+            },
+          },
+        ],
       },
     ],
   },
-
- ]}
+  
 ];
 
 export default productsData;

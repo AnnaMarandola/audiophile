@@ -120,9 +120,9 @@ const Navbar = ({ classes }) => {
               Speakers
             </Typography>
           </Link>
-          <Link to="/:earsphones" className={classes.link}>
+          <Link to="/:earphones" className={classes.link}>
             <Typography variant="h6" className={classes.menuItem}>
-              Earsphones
+              Earphones
             </Typography>
           </Link>
         </div>

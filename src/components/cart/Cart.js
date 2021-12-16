@@ -68,14 +68,13 @@ const Cart = ({
     };
   });
 
-
+  console.log("cart length", cart.length);
   let totals = cart.map((product) => {
     return product.qty * Number(product.price.replace(",", ""));
   });
 
   const reducer = (acc, curr) => acc + curr;
-  const total = totals.reduce(reducer)
-
+  const total = totals.length && totals.reduce(reducer);
 
   // to do : on checkout, set totals to localstorage
 
@@ -97,22 +96,32 @@ const Cart = ({
         horizontal: "center",
       }}
     >
-      <div className={classes.cartContainer}>
-        <div className={classes.titleSection}>
-          <Typography variant="body1">CART ({totalItems})</Typography>
-          <Typography variant="body2" onClick={handleDelete}>
-            Remove all
-          </Typography>
+      {cart.length && (
+        <div className={classes.cartContainer}>
+          <div className={classes.titleSection}>
+            <Typography variant="body1">CART ({totalItems})</Typography>
+            <Typography variant="body2" onClick={handleDelete}>
+              Remove all
+            </Typography>
+          </div>
+
+          {cart &&
+            cart.map((item, id) => <ProductInCart item={item} key={id} />)}
+
+          <div className={classes.total}>
+            <Typography variant="body2">TOTAL</Typography>
+            <Typography>$ {total}</Typography>
+          </div>
+          <NavLink to="/checkout">
+            <button className={classes.ctaButton}>Checkout</button>
+          </NavLink>
         </div>
-        {cart && cart.map((item, id) => <ProductInCart item={item} key={id} />)}
-        <div className={classes.total}>
-          <Typography variant="body2">TOTAL</Typography>
-          <Typography>$ {total}</Typography>
+      )}
+      {!cart.length && (
+        <div className={classes.cartContainer}>
+          <Typography variant="body2">Your cart is empty</Typography>
         </div>
-        <NavLink to="/checkout">
-          <button className={classes.ctaButton}>Checkout</button>
-        </NavLink>
-      </div>
+      )}
     </Popover>
   );
 };

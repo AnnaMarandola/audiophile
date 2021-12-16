@@ -101,7 +101,7 @@ const OtherProducts = ({ classes, others, category }) => {
             <div className={classes.textAndBtn}>
               <Typography variant="h3">{other.name}</Typography>
               <Link
-                to={`/:${category}/:${other.slug}`}
+                to={`/:${other.category}/:${other.slug}`}
                 className={classes.navLink}
               >
                 <button className={classes.ctaButton}>See product</button>

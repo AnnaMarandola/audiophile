@@ -32,6 +32,7 @@ const styles = (theme) => ({
   },
   greetings: {
     paddingTop: "2rem",
+    
   },
   confirmation: {
     padding: "1rem 0",

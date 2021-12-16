@@ -38,7 +38,7 @@ const cartData = [
   },
   {
     id: "YX1 Wireless Earphones",
-    name: "YX1 Wireless Earphones",
+    name: "YX1 Wireless",
     picture: CARTYZ1,
     price: "5,99",
   },

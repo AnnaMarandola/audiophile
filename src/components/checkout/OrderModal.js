@@ -38,6 +38,13 @@ const styles = (theme) => ({
     padding: "1rem 0",
     textAlign: "center",
   },
+  order: {
+    display: "flex",
+    flexDirection: "column",
+    [theme.breakpoints.up("lg")]: {
+      flexDirection: "row"
+    }
+  },
   articlesContainer: {
     backgroundColor: theme.palette.background.paper,
     padding: "2rem",
@@ -52,14 +59,35 @@ const styles = (theme) => ({
     width: "90%",
     justifyContent: "space-evenly",
     alignItems: "center",
-    marginBottom: "1rem"
+    marginBottom: "1rem",
+    [theme.breakpoints.up("sm")]: {
+      flexDirection: "row",
+      width: "70%"
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "100%"
+    },
   },
   productInfos: {
-    textAlign: "center"
+    textAlign: "center",
+    [theme.breakpoints.up("sm")]: {
+      textAlign: "left",
+    },
+    [theme.breakpoints.up("lg")]: {
+      padding: "0 1rem"
+    }
+  },
+  productQty: {
   },
   totalContainer: {
     backgroundColor: "black",
     padding: "2rem",
+    [theme.breakpoints.up("lg")]: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center"
+    }
+
   },
   grandTotal: {
     color: "white",
@@ -107,9 +135,13 @@ const OrderModal = ({ classes, open, handleClose }) => {
     };
   });
 
+  const handleClear = () => {
+    localStorage.clear()
+  }
+
   const article = cart[0];
 
-  const others = quantities.reduce((acc, curr) => acc + curr);
+  const others = quantities.reduce((acc, curr) => acc + curr) - cart[0].qty;
 
   let totals = cart.map((product) => {
     return product.qty * Number(product.price.replace(",", ""));
@@ -146,7 +178,7 @@ const OrderModal = ({ classes, open, handleClose }) => {
                   <Typography variant="body1">{article.name}</Typography>
                   <Typography variant="body2">$ {article.price}</Typography>
                 </div>
-                <Typography variant="body2">x {article.qty}</Typography>
+                <Typography variant="body2"className={classes.productQty}>x {article.qty}</Typography>
               </Card>
               <Typography variant="body2">and {others} other items</Typography>
             </div>
@@ -156,7 +188,7 @@ const OrderModal = ({ classes, open, handleClose }) => {
             </div>
           </div>
           <Link to="/">
-            <button className={classes.ctaButton}>back to home</button>
+            <button className={classes.ctaButton} onClick={handleClear}>back to home</button>
           </Link>
         </Box>
       </Modal>

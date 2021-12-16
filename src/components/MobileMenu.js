@@ -4,7 +4,7 @@ import { withStyles } from "@mui/styles";
 import { Fade, Button, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link } from 'react-router-dom';
 
 const styles = (theme) => ({
   root: {},
@@ -16,7 +16,7 @@ const styles = (theme) => ({
   separator: {
     width: "100%",
     margin: "0.5rem 10%",
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.orange,
     border: "1px solid",
   },
   navLink: {
@@ -101,32 +101,32 @@ function MobileMenu({ classes }) {
         TransitionComponent={Fade}
         elevation={1}
       >
-        <AnchorLink className={classes.navLink} href="#home">
+        <Link className={classes.navLink} to="/">
           <MenuItem className={classes.menuItem} onClick={handleClose}>
             home
           </MenuItem>
-        </AnchorLink>
+        </Link>
         <hr className={classes.separator} />
 
-        <AnchorLink className={classes.navLink} href="#headphones">
+        <Link className={classes.navLink} to="/:headphones">
           <MenuItem className={classes.menuItem} onClick={handleClose}>
             Headphones
           </MenuItem>
-        </AnchorLink>
+        </Link>
         <hr className={classes.separator} />
 
-        <AnchorLink className={classes.navLink} href="#speakers">
+        <Link className={classes.navLink} to="/:speakers">
           <MenuItem className={classes.menuItem} onClick={handleClose}>
             speakers
           </MenuItem>
-        </AnchorLink>
+        </Link>
         <hr className={classes.separator} />
 
-        <AnchorLink className={classes.navLink} href="#earphones">
+        <Link className={classes.navLink} to="/:earphones">
           <MenuItem className={classes.menuItem} onClick={handleClose}>
             earphones
           </MenuItem>
-        </AnchorLink>
+        </Link>
 
         <hr className={classes.separator} />
       </StyledMenu>

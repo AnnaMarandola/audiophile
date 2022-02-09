@@ -1,5 +1,4 @@
-## Frontend Mentor Challenge 
-https://www.frontendmentor.io/challenges
+## [Frontend Mentor Challenge](https://www.frontendmentor.io/challenges)
 
 
 # Getting Started with Create React App
